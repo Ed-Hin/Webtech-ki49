@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+}
+
+body {
+    background-color: #44859b;
+    border-radius: 1.5rem;
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.close {
+    position: absolute;
+    display: flex;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* .logo {
+
+} */
+
+input[type=email], input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #44859b;
+    box-sizing: border-box;
+    text-align: auto;
+    border-radius: 3px;
+}
+
+button {
+    background-color: #44859b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease-out;
+    border-radius: 3px;
+}
+
+button:hover {
+    opacity: 70%;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background: white;
+}
