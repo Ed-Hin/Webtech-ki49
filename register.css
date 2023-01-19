@@ -29,6 +29,7 @@ a {
 
 .close {
     position: absolute;
+    right: 0;
     display: flex;
     color: #000;
     font-size: 35px;
