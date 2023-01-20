@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #44859b;
+    text-align: center
+}
+
+li, a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;   
+    text-decoration: none;
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 30px 1%;
+}
+
+.logo {
+    color: white;
+    font-size: 2.5rem;
+    font-family: "Poppins";
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all 0.2s ease-out;
+}
+
+.navbar a:hover {
+    color: #17c4be;
+}
+
+.personal {
+    display: flex;
+    align-items: center;
+}
+
+.personal a {
+    margin-right: 10px;
+    margin-left: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.2s ease-out;
+}
+
+.personal a:hover {
+    color: #17c4be;
+}
+
+onpage {
+    color: rgb(70, 37, 214);
+}
