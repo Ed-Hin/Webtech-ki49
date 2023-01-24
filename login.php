@@ -15,7 +15,7 @@
       if ($row) {
         if (password_verify($mypassword, $row["pass"])) {
             $_SESSION['login_user'] = $username;
-            header("location: home.php");
+            header("location: index.php");
         } else {
             $error = "Your Login Name or Password is invalid";
         }
@@ -41,7 +41,7 @@
 
         <div class="huh">
         <div class="container">
-            <div style="position: relative;">
+            <div style="position: relatdefinedive;">
                 <span class="close"><a href="home.html">&times;</a></span>
                 
             </div>
