@@ -5,25 +5,22 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $username = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      $username = mysqli_real_escape_string($connection,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($connection,$_POST['password']); 
       
-      $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
+      $sql = "SELECT * FROM Users WHERE user = '$username'";
       $result = mysqli_query($connection,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-         session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
-         
-         header("location: welcome.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
+
+      if ($row) {
+        if (password_verify($mypassword, $row["pass"])) {
+            $_SESSION['login_user'] = $myusername;
+            header("location: home.php");
+        } else {
+            $error = "Your Login Name or Password is invalid";
+        }
+      } else {
+        $error = "Your Login Name or Password is invalid";
       }
    }
 ?>
@@ -36,7 +33,7 @@
         <title>Log in | Forum</title>
     </head>
     <body>
-    <form action="home.html" method="post">
+    <form action="login.php" method="post">
 
         <div class="logo">
             <a href="home.html" title="NAME"></a>
@@ -49,11 +46,16 @@
                 
             </div>
             <h1>Log In</h1>
+            <?php
+                if (defined("error")) {
+                    echo "<h4> Error: " . $error . "</h4>";
+                }
+            ?>
             <label for="username"><p class="user">Username</p></label>
             <input type="text" name="username" required>
 
             <label for="password"><p class="pass">Password</p></label>
-            <input type="text" name="password" required>
+            <input type="password" name="password" required>
 
             <button type="submit">Log In</button>
         </div>

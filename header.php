@@ -14,13 +14,13 @@ session_start();
         <header>
             <img src="https://cdn.discordapp.com/attachments/760819935751438376/1065750623917711540/logo_white.png" class="logo" alt="WhoAsked">
                 <ul class="navbar">
-                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="index.php" class="active">Home</a></li>
                     <li><a href="popular.html">Popular</a></li>
                     <li><a href="topics.html">Topics</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             <div class="personal">
-                <a href="login.html" class="user">Login</a>
+                <a href="login.php" class="user">Login</a>
                 <a href="register.html">Register</a>
             </div>
         </header>
