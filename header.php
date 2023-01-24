@@ -24,7 +24,7 @@ session_start();
                     if (array_key_exists("login_user", $_SESSION)) {
                 ?>  
                     <a href="register.php"><?php echo $_SESSION ["login_user"]; ?></a>
-                    <a href="login.php" class="user">Logout</a>
+                    <a href="index.php" class="user">Logout</a>
 
                 <?php
                     } else {
