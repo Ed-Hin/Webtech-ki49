@@ -80,3 +80,30 @@ header {
 onpage {
     color: rgb(70, 37, 214);
 }
+
+ .searchbar {
+    float: center;
+}
+
+ .searchbar input[type="text"] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 22px;
+    border-radius: 50px;
+}
+
+ .searchbar button {
+    float: center;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 22px;
+    cursor: pointer;
+    color:#44859b;
+    border-radius: 25px;
+}
+
+ .searchbar button:hover {
+    background: #ccc;
+  }
