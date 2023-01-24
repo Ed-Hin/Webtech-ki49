@@ -7,21 +7,21 @@
         <title>Register | Forum</title>
     </head>
     <body>
-
+        <form action="add_user.php" method="post">
         <div class="logo">
             <a href="home.html" title="NAME"></a>
         </div>
-
+        
         <div class="huh">
         <div class="container">
         <span class="close"><a href="home.html">&times;</a></span>
         <h1>Register</h1>
 
         <label for="name"><p class="name">Name</p></label>
-        <input type="text" name="password" required>
+        <input type="text" name="name" required>
 
         <label for="email"><p class="email">Email</p></label>
-        <input type="text" name="password" required>
+        <input type="text" name="email" required>
 
         <label for="username"><p class="user">Username</p></label>
         <input type="text" name="username" required>
@@ -34,5 +34,6 @@
         </div>
             
         </div>
+    </form>
     </body>
 </html>
