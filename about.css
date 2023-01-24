@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #44859b;
+    background-color: white;
     text-align: center
 }
 
@@ -29,16 +29,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
-    /* background-color: #2d5866; */
+    background-color: #44859b;
     padding: 30px 1%;
 }
 
 .logo {
     color: white;
-    width: 10%;
-    height: 10%;
-    top: 0;
+    font-size: 2.5rem;
     font-family: "Poppins";
 }
 
@@ -80,61 +77,17 @@ header {
     color: #17c4be;
 }
 
-h1 {
+p {
+    color: black;
+    font-weight: 500;
     font-family: "Poppins";
-    text-align: left;
-    margin-top: 100px;
-    margin-left: 100px;
-    padding: 0;
-    color: white;
-}
-
-.post {
-    width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-    margin-left: 100px;
-    margin-bottom: 10px;
-    float: left;
-    cursor: pointer;
-}
-
-.post:hover {
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.container {
-    padding: 2px 16px;
-    margin: 15px;
-}
-
-.post2 {
-    width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-    margin-left: 100px;
-    margin-bottom: 10px;
-    float: left;
-    cursor: pointer;
-}
-
-.post2:hover {
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.container2 {
-    padding: 2px 16px;
-    margin: 15px;
+    font-size: 1.5rem;
+    padding: 1% 4%;
 }
 
 h2 {
+    color: black;
     font-family: "Poppins";
-    text-align: left;
+    font-weight: 1000;
+    font-size: 2rem;
 }
-
-p {
-    font-family: "Poppins";
-    text-align: left;
-} 

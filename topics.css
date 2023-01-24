@@ -30,15 +30,12 @@ header {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    /* background-color: #2d5866; */
     padding: 30px 1%;
 }
 
 .logo {
     color: white;
-    width: 10%;
-    height: 10%;
-    top: 0;
+    font-size: 2.5rem;
     font-family: "Poppins";
 }
 
@@ -80,61 +77,33 @@ header {
     color: #17c4be;
 }
 
-h1 {
-    font-family: "Poppins";
-    text-align: left;
-    margin-top: 100px;
-    margin-left: 100px;
-    padding: 0;
-    color: white;
+onpage {
+    color: rgb(70, 37, 214);
 }
 
-.post {
-    width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-    margin-left: 100px;
-    margin-bottom: 10px;
-    float: left;
+ .searchbar {
+    float: center;
+}
+
+ .searchbar input[type="text"] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 22px;
+    border-radius: 50px;
+}
+
+ .searchbar button {
+    float: center;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 22px;
     cursor: pointer;
+    color:#44859b;
+    border-radius: 25px;
 }
 
-.post:hover {
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.container {
-    padding: 2px 16px;
-    margin: 15px;
-}
-
-.post2 {
-    width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-    margin-left: 100px;
-    margin-bottom: 10px;
-    float: left;
-    cursor: pointer;
-}
-
-.post2:hover {
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.container2 {
-    padding: 2px 16px;
-    margin: 15px;
-}
-
-h2 {
-    font-family: "Poppins";
-    text-align: left;
-}
-
-p {
-    font-family: "Poppins";
-    text-align: left;
-} 
+ .searchbar button:hover {
+    background: #ccc;
+  }
