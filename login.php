@@ -41,7 +41,7 @@
 
         <div class="huh">
         <div class="container">
-            <div style="position: relatdefinedive;">
+            <div style="position: relative;">
                 <span class="close"><a href="home.html">&times;</a></span>
                 
             </div>
