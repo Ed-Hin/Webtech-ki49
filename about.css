@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #44859b;
+    background-color: white;
     text-align: center
 }
 
@@ -29,7 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
+    background-color: #44859b;
     padding: 30px 1%;
 }
 
@@ -78,10 +78,16 @@ header {
 }
 
 p {
-    color: white;
+    color: black;
     font-weight: 500;
     font-family: "Poppins";
     font-size: 1.5rem;
-    padding: 5% 5%;
+    padding: 1% 4%;
+}
 
+h2 {
+    color: black;
+    font-family: "Poppins";
+    font-weight: 1000;
+    font-size: 2rem;
 }
