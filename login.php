@@ -14,7 +14,7 @@
 
       if ($row) {
         if (password_verify($mypassword, $row["pass"])) {
-            $_SESSION['login_user'] = $myusername;
+            $_SESSION['login_user'] = $username;
             header("location: home.php");
         } else {
             $error = "Your Login Name or Password is invalid";
@@ -47,7 +47,7 @@
             </div>
             <h1>Log In</h1>
             <?php
-                if (defined("error")) {
+                if (isset($error)) {
                     echo "<h4> Error: " . $error . "</h4>";
                 }
             ?>

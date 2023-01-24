@@ -20,8 +20,22 @@ session_start();
                     <li><a href="about.php">About</a></li>
                 </ul>
             <div class="personal">
-                <a href="login.php" class="user">Login</a>
-                <a href="register.php">Register</a>
+                <?php
+                    if (array_key_exists("login_user", $_SESSION)) {
+                ?>  
+                    <a href="register.php"><?php echo $_SESSION ["login_user"]; ?></a>
+                    <a href="login.php" class="user">Logout</a>
+
+                <?php
+                    } else {
+                ?>
+                
+                    <a href="login.php" class="user">Login</a>
+                    <a href="register.php">Register</a>
+
+                <?php
+                    }
+                ?>
             </div>
         </header>
     </body>
