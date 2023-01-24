@@ -1,5 +1,5 @@
 <?php
-   include("config.php");
+   include("../../connection.php");
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,7 +9,7 @@
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
       $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
-      $result = mysqli_query($db,$sql);
+      $result = mysqli_query($connection,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       
@@ -36,6 +36,7 @@
         <title>Log in | Forum</title>
     </head>
     <body>
+    <form action="home.html" method="post">
 
         <div class="logo">
             <a href="home.html" title="NAME"></a>
@@ -58,5 +59,6 @@
         </div>
         </div>
         </div>
+</form>
     </body>
 </html>
