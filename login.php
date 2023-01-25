@@ -36,13 +36,13 @@
     <form action="login.php" method="post">
 
         <div class="logo">
-            <a href="home.html" title="NAME"></a>
+            <a href="index.php" title="NAME"></a>
         </div>
 
         <div class="huh">
         <div class="container">
             <div style="position: relative;">
-                <span class="close"><a href="home.html">&times;</a></span>
+                <span class="close"><a href="index.php">&times;</a></span>
                 
             </div>
             <h1>Log In</h1>

@@ -9,12 +9,12 @@
     <body>
         <form action="add_user.php" method="post">
         <div class="logo">
-            <a href="home.html" title="NAME"></a>
+            <a href="index.php" title="NAME"></a>
         </div>
         
         <div class="huh">
         <div class="container">
-        <span class="close"><a href="home.html">&times;</a></span>
+        <span class="close"><a href="index.php">&times;</a></span>
         <h1>Register</h1>
 
         <label for="name"><p class="name">Name</p></label>
