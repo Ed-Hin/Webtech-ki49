@@ -30,12 +30,15 @@ header {
     justify-content: space-between;
     align-items: center;
     background: transparent;
+    /* background-color: #2d5866; */
     padding: 30px 1%;
 }
 
 .logo {
     color: white;
-    font-size: 2.5rem;
+    width: 10%;
+    height: 10%;
+    top: 0;
     font-family: "Poppins";
 }
 
@@ -77,6 +80,76 @@ header {
     color: #17c4be;
 }
 
-onpage {
-    color: rgb(70, 37, 214);
+h1 {
+    font-family: "Poppins";
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 0;
+    color: white;
+}
+
+.popular-post {
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    float: left;
+    cursor: pointer;
+    background-color: blanchedalmond;
+}
+
+.popular-post:hover {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.container {
+    padding: 2px 16px;
+    margin: 15px;
+}
+
+.popular-post2 {
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    float: left;
+    cursor: pointer;
+    background-color: blanchedalmond;
+}
+
+.popular-post2:hover {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.container2 {
+    padding: 2px 16px;
+    margin: 15px;
+}
+
+h2 {
+    font-family: "Poppins";
+    text-align: left;
+}
+
+p {
+    font-family: "Poppins";
+    text-align: left;
+} 
+
+h3 {
+    text-align: right;
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+
+.filter-box{
+    text-align: left;
+    margin-left: 100px;
+    width: 100%;
+    height: 20
 }
