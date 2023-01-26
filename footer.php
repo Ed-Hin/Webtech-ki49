@@ -22,9 +22,7 @@
 
             <li><h2 class="footer-title">Legal</h2>
                 <ul class="legal">
-                    <li><a href="#">Privacy Policy</a></li>    
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </li>
 
