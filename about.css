@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #44859b;
+    background-color: #448a9b;
     text-align: center
 }
 
@@ -29,8 +29,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
-    padding: 30px 1%;
+    background-color: transparent;
+    padding: 20px 1%;
 }
 
 .logo {
@@ -77,11 +77,29 @@ header {
     color: #17c4be;
 }
 
+
 p {
     color: white;
     font-weight: 500;
     font-family: "Poppins";
     font-size: 1.5rem;
-    padding: 5% 5%;
+    padding: 3% 15%;
+    text-align: center;
+}
 
+h2 {
+    color: white;
+    font-family: "Poppins";
+    font-weight: 1000;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* MOET OP ELKE PAGINA */
+.navbar > .active > a {
+    color: #17c4be;
+}
+
+.nav-link {
+    color: white;
 }

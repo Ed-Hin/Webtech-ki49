@@ -29,13 +29,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
-    padding: 30px 1%;
+    background: #44859b;
+    padding: 20px 1%;
 }
 
 .logo {
-    color: white;
-    font-size: 2.5rem;
+    width: 10%;
+    height: 10%;    
+    top: 0;
     font-family: "Poppins";
 }
 
@@ -77,68 +78,90 @@ header {
     color: #17c4be;
 }
 
-.wrapper {
-    width: 100%;
-    max-width: 31.25rem;
-    margin: 6rem auto;
-
-}
-
-.searchBar {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-  
-#searchQueryInput {
-    width: 100%;
-    height: 2.8rem;
-    background: #f5f5f5;
-    outline: none;
-    border: none;
-    border-radius: 1.625rem;
-    padding: 0 3.5rem 0 1.5rem;
-    font-size: 1rem;
-}
-
-#searchQuerySubmit {
-    width: 3.5rem;
-    height: 2.8rem;
-    margin-left: -3.5rem;
-    background: none;
-    border: none;
-    outline: none;
-}
-  
-  #searchQuerySubmit:hover {
-    cursor: pointer;
-}
-
-/* .button1 {
-    font-family: "roboto";
+h1 {
+    font-family: "Poppins";
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 0;
     color: white;
-    padding: 8px 25px;
-    background-color: rgba(23, 196, 190, 1);
-    border-radius: 50px;
-    border: none;
+}
+
+.post {
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    float: left;
     cursor: pointer;
 }
 
-.button2 {
-    font-family: "roboto";
-    color: rgba(23, 196, 190, 1);
-    padding: 8px 25px;
-    background-color: grey;
-    border-radius: 50px;
-    border: none;
+.post:hover {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.container {
+    padding: 2px 16px;
+    margin: 15px;
+}
+
+.post2 {
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    float: left;
     cursor: pointer;
 }
 
-.button1:hover {
-    background-color: rgb(17, 134, 130);
+.post2:hover {
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
-.button2:hover {
-    background-color: rgba(128, 128, 128, 0.562);
-} */
+.container2 {
+    padding: 2px 16px;
+    margin: 15px;
+}
+
+h2 {
+    font-family: "Poppins";
+    text-align: left;
+    color: black;
+}
+
+p {
+    font-family: "Poppins";
+    text-align: left;
+    color: black;
+} 
+
+.posts {
+    min-height: 93vh;
+    max-width: 100%;
+    margin: 0;
+}
+
+.HomeImage {
+    position: relative;
+    margin-left: 60vw; 
+    width: 10;
+    height: 10;
+    max-width: 100%;
+    height: auto;
+}
+
+div {
+    display: block;
+}
+
+.navbar > .active > a {
+    color: #17c4be;
+}
+
+.nav-link {
+    color: white;
+}
