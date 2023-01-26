@@ -33,7 +33,7 @@ include "footer.php";
             <textarea type="text" id="title" name="title" placeholder="Title.."></textarea><br><br>
             <label for="content">Content</label>            <br><br>
             <textarea type="text" id="content" name="content" placeholder="Content.."></textarea><br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Post">
 
 
 
