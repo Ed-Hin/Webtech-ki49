@@ -95,6 +95,7 @@ h1 {
     margin-bottom: 10px;
     float: left;
     cursor: pointer;
+    background-color: blanchedalmond;
 }
 
 .post:hover {
@@ -115,6 +116,7 @@ h1 {
     margin-bottom: 10px;
     float: left;
     cursor: pointer;
+    background-color: blanchedalmond;
 }
 
 .post2:hover {
@@ -167,4 +169,5 @@ h3 {
     text-align: right;
     margin-bottom: 0px;
     font-size: 15px;
+    color: black;
 }
