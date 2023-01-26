@@ -7,7 +7,6 @@ $user = mysqli_real_escape_string($connection, htmlspecialchars($_POST["username
 $pass = mysqli_real_escape_string($connection, htmlspecialchars($_POST["password"]));
 $hash = password_hash($pass, PASSWORD_DEFAULT);
 
-
 try {
 $sql = "INSERT INTO Users (name, user, email, pass) VALUES ('$name', '$user', '$email', '$hash')";
 mysqli_query($connection, $sql);
