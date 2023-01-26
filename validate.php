@@ -1,4 +1,4 @@
-
+<!-- Checkt of de username in de Admin Database -->
 <?php
  
  include_once('connection.php');
@@ -15,7 +15,7 @@
       
      $username = test_input($_POST["username"]);
      $password = test_input($_POST["password"]);
-     $stmt = $conn->prepare("SELECT * FROM Admins");
+     $stmt = $connection->prepare("SELECT * FROM Admins");
      $stmt->execute();
      $users = $stmt->fetchAll();
       
@@ -35,3 +35,4 @@
  }
   
  ?>
+ 
