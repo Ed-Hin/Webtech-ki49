@@ -9,7 +9,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="home.css">
     <title>WhoAsked</title>
-    <link rel="icon" type="image/x-icon" href="logo_alleen_symbol.png">
+    <link rel="icon" type="image/x-icon" href="logo_only_symbol.png">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
@@ -17,8 +17,7 @@ session_start();
 
 <body>
     <header>
-        <img src="https://cdn.discordapp.com/attachments/760819935751438376/1065750623917711540/logo_white.png"
-            class="logo" alt="WhoAsked">
+        <img src="logo_white.png" class="logo" alt="WhoAsked">
         <ul class="navbar">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="popular.php" class="nav-link">Popular</a></li>
