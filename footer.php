@@ -8,7 +8,7 @@
 <footer>
     <div class="footer">
         <div class="footer-left">
-        <img src="logo_white.png" class="logo">
+        <img src="logo_white_small.png" class="logo">
             <p>Communicate with others through our forum!</p>
         </div>
         <ul class="footer-right">
