@@ -6,16 +6,42 @@
 
 <body>
 <footer>
-    <ul class="navbar">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="about.php">About</a></li>
-    </ul>
+    <div class="footer">
+        <div class="footer-left">
+        <img src="https://cdn.discordapp.com/attachments/760819935751438376/1065750623917711540/logo_white.png" class="logo" width="10" height="10">
+            <p>Communicate with others through our forum!</p>
+        </div>
+        <ul class="footer-right">
 
-<br><br>
+            <li><h2 class="footer-title">Explore</h2>
+                <ul class="explore">
+                    <li><a href="popular.php">Popular</a></li>
+                    <li><a href="topics.php">Topics</a></li>
+                </ul>
+            </li>
 
-    <p> WhoAsked &copy; 2023</p>
+            <li><h2 class="footer-title">Legal</h2>
+                <ul class="legal">
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </li>
+
+            <li><h2 class="footer-title">Get Started</h2>
+                <ul class="start">
+                <li><a href="login.php">Login</a></li>
+                <li><a href="register.php">Register</a></li>
+                </ul>
+            </li>
+
+            <li><h2 class="footer-title">Questions?</h2>
+            <ul class="about">
+                <li><a href="contact.php">Contact</a></li>
+            </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; WhoAsked 2023</p>
+        </div>
 </footer>
 
 

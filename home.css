@@ -4,15 +4,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Poppins";
 }
 
 body {
     background-color: #44859b;
-    text-align: center
+    text-align: center;
+    min-height: 80vh;
 }
 
 li, a {
-    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: white;   
@@ -21,7 +22,8 @@ li, a {
 }
 
 header {
-    position: fixed;
+    /* of fixed, ligt eraan */
+    position: absolute;
     top: 0;
     right: 0;
     z-index: 1000;
@@ -29,17 +31,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
-    /* background-color: #2d5866; */
-    padding: 30px 1%;
+    background: #44859b;
+    padding: 20px 1%;
 }
 
 .logo {
-    color: white;
     width: 10%;
-    height: 10%;
+    height: 10%;    
     top: 0;
-    font-family: "Poppins";
 }
 
 .navbar {
@@ -81,7 +80,6 @@ header {
 }
 
 h1 {
-    font-family: "Poppins";
     text-align: left;
     margin-top: 100px;
     margin-left: 100px;
@@ -130,11 +128,43 @@ h1 {
 }
 
 h2 {
-    font-family: "Poppins";
     text-align: left;
+    color: black;
 }
 
 p {
-    font-family: "Poppins";
     text-align: left;
+    color: black;
 } 
+
+.posts {
+    max-width: 100%;
+    margin: 0;
+}
+
+.HomeImage {
+    position: relative;
+    margin-left: 60vw; 
+    width: 10;
+    height: 10;
+    max-width: 100%;
+    height: auto;
+}
+
+div {
+    display: block;
+}
+
+.navbar > .active > a {
+    color: #17c4be;
+}
+
+.nav-link {
+    color: white;
+}
+
+h3 {
+    text-align: right;
+    margin-bottom: 0px;
+    font-size: 15px;
+}

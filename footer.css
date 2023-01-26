@@ -1,61 +1,78 @@
-* {
-    text-align: center;
-    float: none;
-}
-    
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
+
 footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
+    top: 10;
     width: 100%;
-    height: 10%;
-    background-color: #44859b;
+    background-color: #305e6d;
     color: white;
     text-align: center;
+    display: block;
+    margin-top: -200px;
 }
-    
-footer .nav a{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: white; 
-    text-decoration: none;
-    text-align: center;
+
+.footer {
     display: flex;
-    float: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0px 6% 0px 6%;
 }
-    
+
+.footer-left {
+    flex: 1;
+    margin: 20px 0 16px 0;
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    border-top: 1px solid black;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 2;
+    padding: 50px 20px 20px 0;
+    margin: 0 0 0 40px;
+    justify-content: space-between;
+}
+
+.footer-title {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+li {
+    display: list-item;
+}  
+
+footer .logo {
+    height: 70%;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
 footer p {
-    opacity: 0.5;
     text-align: center;
 }
-    
-footer .navbar {
-    list-style: none;
-    display: inline;
-}
-    
-footer .navbar li {
-    display: inline-block;
-    float: none;
-}
-    
-footer .navbar a {
-    font-size: 1.0rem;
-    font-weight: 500;
-    padding: 5px 0;
-    margin: 0px 30px;
-    transition: all 0.2s ease-out;
-}
-    
-footer .navbar a:hover {
-    color: #17c4be;
-}
-    
-li,a {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    text-decoration: none;
-    margin-top: 15px;
-}
-    
