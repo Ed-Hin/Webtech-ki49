@@ -1,5 +1,6 @@
 <?php
 include "header.php";
+include "footer.php";
 ?>
 <link rel="stylesheet" href="popular.css">
 <br><br>
