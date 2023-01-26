@@ -1,9 +1,9 @@
 * {
     text-align: center;
     float: none;
-    }
+}
     
-    footer {
+footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -12,9 +12,9 @@
     background-color: #44859b;
     color: white;
     text-align: center;
-    }
+}
     
-    footer .nav a{
+footer .nav a{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -23,38 +23,39 @@
     text-align: center;
     display: flex;
     float: none;
-    }
+}
     
-    footer p {
+footer p {
     opacity: 0.5;
-    }
+    text-align: center;
+}
     
-    footer .navbar {
+footer .navbar {
     list-style: none;
     display: inline;
-    }
+}
     
-    footer .navbar li {
+footer .navbar li {
     display: inline-block;
     float: none;
-    }
+}
     
-    footer .navbar a {
+footer .navbar a {
     font-size: 1.0rem;
     font-weight: 500;
     padding: 5px 0;
     margin: 0px 30px;
     transition: all 0.2s ease-out;
-    }
+}
     
-    footer .navbar a:hover {
+footer .navbar a:hover {
     color: #17c4be;
-    }
+}
     
-    li,a {
+li,a {
     font-family: 'Poppins', sans-serif;
     color: white;
     text-decoration: none;
     margin-top: 15px;
-    }
+}
     
