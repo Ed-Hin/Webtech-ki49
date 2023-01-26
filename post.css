@@ -1,0 +1,54 @@
+body {
+    background-color: #44859b;
+}
+
+select {
+    width: 30%;
+    float: center;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+}
+
+select [value="Select topic"] {
+    font-size: 30px;
+} 
+
+
+
+.post-box {
+    float: center;
+}
+
+
+.post-box #title {
+    box-sizing: border-box;
+    width: 50%;
+}
+
+
+.post-box #content {
+    box-sizing: border-box;
+    width: 50%;
+    height: 300px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.post-box textarea {
+    text-align: left;
+    vertical-align: top;
+    font-size: 20px;
+    resize: none;
+    border: 1px;
+}
+
+.post-box input[type="submit"] {
+    float: center;
+    padding: 16px 32px;
+    color: black;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: white;
+
+}
