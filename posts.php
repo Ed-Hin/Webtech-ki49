@@ -28,3 +28,7 @@ $posts = $result->fetch_assoc();
 <?php
 include "footer.php";
 ?>
+
+<?php
+include "footer.php";
+?>

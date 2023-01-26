@@ -50,6 +50,7 @@ session_start();
     <script>
     $(document).ready(function() {
 
+    
         $('ul.navbar > li').each(function(x) {
             // console.log(x, window.location.href.includes($(this).text().toLowerCase()))
             if (    
