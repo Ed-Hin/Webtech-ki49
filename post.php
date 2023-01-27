@@ -1,6 +1,4 @@
 <?php
-include "header.php";
-include "footer.php";   
 include("../../connection.php");
 session_start();
 
@@ -16,45 +14,61 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result) {
         header("location: index.php");
-    }
+    } 
 }
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="eng">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="post.css">
+    <link rel="icon" type="image/x-icon" href="logo_only_symbol.png">
+    <title>WhoAsked</title>
 </head>
 
 <body>
-    <h1>Create your post</h1>
     <form action="post.php" method="post">
         <?php
             if (isset($error)) {
                 echo "<h4> Error: " . $error . "</h4>";
             }
         ?>
-        <!--Filter Box-->
-        <div class="filter-box">
-            <select name="topics" id="topicslist">
-                <option value="Select topic" id="Selecttopic">Select topic..</option>
-                <option value="Cars">Cars</option>
-                <option value="Pets">Pets</option>
-                <option value="Food">Food</option>
-                <option value="Memes">Memes</option>
-                <option value="Politics">Politics</option>
-                <option value="Music">Music</option>
-            </select>
-        </div>
-        <div class="post-box">
-            <label for="title">Title</label><br><br>
-            <textarea type="text" id="title" name="title" placeholder="Title.."></textarea><br><br>
-            <label for="content">Content</label> <br><br>
-            <textarea type="text" id="content" name="content" placeholder="Content.."></textarea><br>
-            <input type="submit" value="Post">
+        <div>
+            <div class="container">
+                <div style="position: relative;">
+                    <span class="close"><a href="index.php" class="closebtn">&times;</a></span>
+                </div>
+                <h1>Create your post</h1>
+
+                <!--Filter Box-->
+                <div class="filter-box">
+                    <select name="topics" id="topicslist">
+                        <option value="Select topic" id="Selecttopic">Select topic..</option>
+                        <option value="Cars">Cars</option>
+                        <option value="Pets">Pets</option>
+                        <option value="Food">Food</option>
+                        <option value="Memes">Memes</option>
+                        <option value="Politics">Politics</option>
+                        <option value="Music">Music</option>
+                    </select>
+                </div>
+                <div class="post-box">
+                    <label for="title">
+                        <p class="title">Title</p>
+                    </label>
+                    <textarea type="text" id="title" name="title"></textarea>
+                    <label for="content">
+                        <p class="content">Content</p>
+                    </label>
+                    <textarea type="text" id="content" name="content"></textarea>
+                    <input type="submit" value="Post">
     </form>
     </div>
+    </div>
+
 </body>
 
 </html>

@@ -39,22 +39,17 @@
 <body>
     <form action="login.php" method="post">
 
-        <div class="logo">
-            <a href="index.php" title="NAME"></a>
-        </div>
-
         <div class="huh">
             <div class="container">
                 <div style="position: relative;">
                     <span class="close"><a href="index.php" class="closebtn">&times;</a></span>
-
                 </div>
                 <h1>Log In</h1>
                 <?php
                 if (isset($error)) {
                     echo "<h4> Error: " . $error . "</h4>";
                 }
-            ?>
+                ?>
                 <label for="username">
                     <p class="user">Username</p>
                 </label>
