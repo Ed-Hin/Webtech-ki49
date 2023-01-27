@@ -1,0 +1,57 @@
+* {
+    font-family: "Poppins";
+}
+
+body {
+    background-color: #44859b;
+}
+
+select {
+    width: 30%;
+    float: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.post-box {
+    float: center;
+}
+
+.post-box #title {
+    box-sizing: border-box;
+    width: 50%;
+    border-radius: 4px;
+}
+
+.post-box #content {
+    box-sizing: border-box;
+    width: 50%;
+    height: 200px;
+    border-radius: 4px;
+}
+
+
+.post-box textarea {
+    text-align: left;
+    vertical-align: top;
+    font-size: 20px;
+    resize: none;
+    border: 1px;
+}
+
+.post-box input[type="submit"] {
+    float: center;
+    padding: 16px 32px;
+    color: black;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 4px;
+
+}
+
+h1 {
+    text-align: center;
+}
