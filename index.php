@@ -1,6 +1,7 @@
 <?php
 include "header.php";
 include "footer.php";
+include "cookiespopup.php";
 ?>
 
 <div class="posts">
