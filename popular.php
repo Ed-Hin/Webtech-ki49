@@ -25,7 +25,8 @@ include "footer.php";
                     <div class="container">
                         <h2>Ik vind dit echt vet</h2>
                         <p>jatoch</p>
-                        <h3>10000 Likes | Published on: ../../....</h3> 
+                        <h3>10000 Likes | Published on: ../../....</h3>
+                        <h4> <input type="text" id="comment" placeholder="Add comment..."> <h4>
                     </div>
                 </div>
                 <div class="popular-post2">
@@ -33,6 +34,7 @@ include "footer.php";
                         <h2>Ik vind dit echt vet</h2>
                         <p>jatoch</p>
                         <h3>500 Likes | Published on: ../../....</h3>
+                        <h4> <input type="text" id="comment" placeholder="Add comment..."> <h4>
                     </div>
                 </div>
             </div>
