@@ -8,7 +8,7 @@
 <footer>
     <div class="footer">
         <div class="footer-left">
-        <img src="https://cdn.discordapp.com/attachments/760819935751438376/1065750623917711540/logo_white.png" class="logo" width="10" height="10">
+        <img src="logo_white_small.png" class="logo">
             <p>Communicate with others through our forum!</p>
         </div>
         <ul class="footer-right">
@@ -33,10 +33,9 @@
                 </ul>
             </li>
 
-            <li><h2 class="footer-title">About us</h2>
+            <li><h2 class="footer-title">Questions?</h2>
             <ul class="about">
                 <li><a href="contact.php">Contact</a></li>
-                <li><a href="about.php">About</a></li>
             </li>
             </ul>
         </div>
