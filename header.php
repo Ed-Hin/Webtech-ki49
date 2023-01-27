@@ -35,6 +35,7 @@ session_start();
             <!-- # is gegevens van de user, moet nog worden gemaakt -->
             <a href="#"><?php echo $_SESSION ["login_user"]; ?></a>
             <a href="logout.php" class="user">Logout</a>
+            <a href="post.php"><button>Post</button></a>
 
             <?php
                     } else {
@@ -42,7 +43,6 @@ session_start();
 
             <a href="login.php" class="user">Login</a>
             <a href="register.php">Register</a>
-
             <?php
                     }
                 ?>

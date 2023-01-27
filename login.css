@@ -70,7 +70,16 @@ button:hover {
     position: absolute;
     right: 0;
     display: flex;
-    color: #000;
+    color: #44859b;
     font-size: 35px;
     font-weight: bold;
+    transition: all 0.3s ease-out;
+}
+
+.close:hover {
+    opacity: 70%;
+}
+
+.closebtn {
+    color: #44859b;
 }

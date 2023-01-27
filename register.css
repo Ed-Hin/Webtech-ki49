@@ -31,14 +31,18 @@ a {
     position: absolute;
     right: 0;
     display: flex;
-    color: #000;
     font-size: 35px;
     font-weight: bold;
+    transition: all 0.3s ease-out
 }
 
-/* .logo {
+.close:hover {
+    opacity: 70%;
+}
 
-} */
+.closebtn {
+    color: #44859b;
+}
 
 input[type=email], input[type=text], input[type=password] {
     width: 100%;

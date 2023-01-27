@@ -59,6 +59,7 @@ footer {
     font-size: 20px;
     text-align: center;
     justify-content: space-between;
+    color: black;
 }
 
 li {
@@ -76,4 +77,7 @@ footer .logo {
 
 footer p {
     text-align: center;
+    font-size: 16px;
+    padding: 0;
+    color: white;
 }

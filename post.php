@@ -54,9 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <textarea type="text" id="content" name="content" placeholder="Content.."></textarea><br>
             <input type="submit" value="Post">
     </form>
-
     </div>
-
 </body>
 
 </html>

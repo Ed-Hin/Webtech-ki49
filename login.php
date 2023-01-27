@@ -46,7 +46,7 @@
         <div class="huh">
             <div class="container">
                 <div style="position: relative;">
-                    <span class="close"><a href="index.php">&times;</a></span>
+                    <span class="close"><a href="index.php" class="closebtn">&times;</a></span>
 
                 </div>
                 <h1>Log In</h1>
