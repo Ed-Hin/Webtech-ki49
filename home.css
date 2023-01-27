@@ -4,15 +4,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Poppins";
 }
 
 body {
     background-color: #44859b;
-    text-align: center
+    text-align: center;
+    min-height: 80vh;
 }
 
 li, a {
-    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
     color: white;   
@@ -21,7 +22,8 @@ li, a {
 }
 
 header {
-    position: fixed;
+    /* of fixed, ligt eraan */
+    position: absolute;
     top: 0;
     right: 0;
     z-index: 1000;
@@ -37,7 +39,6 @@ header {
     width: 10%;
     height: 10%;    
     top: 0;
-    font-family: "Poppins";
 }
 
 .navbar {
@@ -79,7 +80,6 @@ header {
 }
 
 h1 {
-    font-family: "Poppins";
     text-align: left;
     margin-top: 100px;
     margin-left: 100px;
@@ -95,6 +95,7 @@ h1 {
     margin-bottom: 10px;
     float: left;
     cursor: pointer;
+    background-color: blanchedalmond;
 }
 
 .post:hover {
@@ -115,6 +116,7 @@ h1 {
     margin-bottom: 10px;
     float: left;
     cursor: pointer;
+    background-color: blanchedalmond;
 }
 
 .post2:hover {
@@ -128,19 +130,16 @@ h1 {
 }
 
 h2 {
-    font-family: "Poppins";
     text-align: left;
     color: black;
 }
 
 p {
-    font-family: "Poppins";
     text-align: left;
     color: black;
 } 
 
 .posts {
-    min-height: 93vh;
     max-width: 100%;
     margin: 0;
 }
@@ -164,4 +163,11 @@ div {
 
 .nav-link {
     color: white;
+}
+
+h3 {
+    text-align: right;
+    margin-bottom: 0px;
+    font-size: 15px;
+    color: black;
 }
