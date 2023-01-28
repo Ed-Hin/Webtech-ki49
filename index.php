@@ -19,7 +19,7 @@ $result = mysqli_query($connection,$sql);
             <div class="container">    
             <h2><?php echo $posts['title'] ?></h2>
             <p><?php echo $posts['contents'] ?><p>
-            <h3>10000 Likes | Published on: <?php echo $posts['CURRENT_TIMESTAMP'] ?></h3>
+            <h3>10000 Likes | Published on: <?php echo $posts['datetime'] ?></h3>
             </div>
         </div>
     <?php } ?> 
