@@ -158,11 +158,13 @@ div {
 }
 
 /* De tekst voor likes en datum */
-span {
-    text-align: right;
-    margin-bottom: 0px;
+.extra span {
+    position: absolute;
     font-size: 15px;
     color: black;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
 }
 
 /* Post button */

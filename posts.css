@@ -142,11 +142,9 @@ div {
 
 .extra span {
     position: absolute;
-    margin-bottom: 0px;
     font-size: 15px;
     color: black;
     bottom: 0;
     right: 0;
-    vertical-align: bottom;
-    display: table-cell;
-}
+    padding: 10px;
+} 

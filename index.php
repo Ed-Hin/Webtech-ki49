@@ -6,6 +6,7 @@ include("../../connection.php");
 $userId = $_SESSION['user_id'];
 
 $sql = "SELECT * FROM Posts WHERE user = '$userId'";
+print($sql);
 $result = mysqli_query($connection,$sql);
 
 ?> 
@@ -19,7 +20,9 @@ $result = mysqli_query($connection,$sql);
             <div class="container">    
             <h2><?php echo $posts['title'] ?></h2>
             <p><?php echo $posts['contents'] ?><p>
-            <span>10000 Likes | Published on: <?php echo $posts['datetime'] ?></span>
+            </div>
+            <div class="extra" style="position:relative;">
+            <span> Likes | Published on: <?php echo $posts['datetime'] ?></span>
             </div>
         </div>
     <?php } ?> 

@@ -16,7 +16,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    background: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000);
+    background: url(background.jpg);
 }
 
 h1 {
@@ -77,6 +77,7 @@ button:hover {
     padding: 2rem;
     border-radius: 10px;
     background: white;
+    margin: auto;
 }
 
 p {
