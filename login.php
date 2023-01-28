@@ -16,7 +16,7 @@
         if (password_verify($mypassword, $row["pass"])) {
             $_SESSION['login_user'] = $username;
             $_SESSION['user_id'] = $row["ID"];
-            $_SESSION['password'] = $mypassword;
+            $_SESSION['user_info'] = $row["postid"];
             
             header("location: index.php");
         } else {
