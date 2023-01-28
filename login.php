@@ -16,6 +16,8 @@
         if (password_verify($mypassword, $row["pass"])) {
             $_SESSION['login_user'] = $username;
             $_SESSION['user_id'] = $row["ID"];
+            $_SESSION['password'] = $mypassword;
+            
             header("location: index.php");
         } else {
             $error = "Your Login Name or Password is invalid";
@@ -32,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="login.css">
-    <link rel="icon" type="image/x-icon" href="logo_alleen_symbol.png">
+    <link rel="icon" type="image/x-icon" href="logo_only_symbol.png">
     <title>WhoAsked</title>
 </head>
 

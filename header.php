@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="eng">
 
@@ -33,7 +34,7 @@ session_start();
                     if (array_key_exists("login_user", $_SESSION)) {
                 ?>
             <!-- # is gegevens van de user, moet nog worden gemaakt -->
-            <a href="#"><?php echo $_SESSION ["login_user"]; ?></a>
+            <a href="user.php"><?php echo $_SESSION ["login_user"]; ?></a>
             <a href="logout.php" class="user">Logout</a>
             <a href="post.php"><button>Post</button></a>
 
