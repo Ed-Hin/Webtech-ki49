@@ -91,39 +91,30 @@ header {
 .posts {
     max-width: 100%;
     margin: 0;
-}
-
-/* Geldt voor de tekst 'Latest posts' */
-h1 {
-    text-align: left;
-    margin-top: 100px;
-    margin-left: 100px;
-    padding: 0;
-    color: white;
+    padding-top: 100px;
 }
 
 /* Is een divisie van de pagina (1 post) */
-.post_info {
+.post {
     width: 60%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
-    margin-left: 100px;
-    margin-bottom: 10px;
-    float: left;
-    cursor: pointer;
     background-color: blanchedalmond;
+    padding: 2px 16px;
+    margin: auto;
+    margin-top: 40px;
+    word-wrap: break-word;
+}
+
+.container {
+    min-height: 200px;
+    word-wrap: break-word;
 }
 
 /* Creeërt een kleine border wanneer een muis erop staat */
 .post:hover {
     border: 1px solid black;
     border-radius: 5px;
-}
-
-/* Hoeveel ruimte er zit voor de tekst van de post (plek van de tekst)*/
-.container {
-    padding: 2px 16px;
-    margin: 15px;
 }
 
 /* De titel van de post */
@@ -138,16 +129,6 @@ p {
     color: black;
 } 
 
-/* De afbeelding op de startpagina -> hoe groot en de positie*/
-.HomeImage {
-    position: relative;
-    margin-left: 60vw; 
-    width: 10;
-    height: 10;
-    max-width: 100%;
-    height: auto;
-}
-
 div {
     display: block;
 }
@@ -158,28 +139,14 @@ div {
 }
 
 /* De tekst voor likes en datum */
-span {
-    text-align: right;
+
+.extra span {
+    position: absolute;
     margin-bottom: 0px;
     font-size: 15px;
     color: black;
-}
-
-/* Post button */
-button {
-    padding: 0 10px 0 10px;
-    border-radius: 5px;
-    box-shadow: #17c4be;
-    box-sizing: border-box;
-    border: 2px blue;
-    transition: all 0.3s ease-out ;
-    color: black;
-    background-color: blanchedalmond;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-a button:hover {
-    color: #17c4be;
-    box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+    bottom: 0;
+    right: 0;
+    vertical-align: bottom;
+    display: table-cell;
 }

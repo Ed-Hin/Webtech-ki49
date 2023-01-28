@@ -30,9 +30,9 @@ session_start();
             <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
         </ul>
         <div class="personal">
-            <?php
-                    if (array_key_exists("login_user", $_SESSION)) {
-                ?>
+                <?php
+                        if (array_key_exists("login_user", $_SESSION)) {
+                    ?>
             <!-- # is gegevens van de user, moet nog worden gemaakt -->
             <a href="user.php"><?php echo $_SESSION ["login_user"]; ?></a>
             <a href="logout.php" class="user">Logout</a>

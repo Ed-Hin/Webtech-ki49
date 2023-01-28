@@ -69,7 +69,6 @@ button:hover {
 .close {
     position: absolute;
     right: 0;
-    display: flex;
     color: #44859b;
     font-size: 35px;
     font-weight: bold;
