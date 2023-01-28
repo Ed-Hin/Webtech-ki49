@@ -6,7 +6,7 @@ include "footer.php";
 <head>
     <link rel="stylesheet" href="about.css"> 
 </head>
-    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
     
     <h2>About WhoAsked</h2>
         

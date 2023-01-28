@@ -33,11 +33,11 @@ a {
 .container {
     width: 100%;
     max-width: 100%;
-    padding: 2rem;
+    padding: 1.8rem;
     border-radius: 10px;
     background: white;
     margin: auto;
-    height: 350px;
+    height: 310px;
     width: 450px;
 }
 

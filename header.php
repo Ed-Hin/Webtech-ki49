@@ -32,7 +32,7 @@ session_start();
         <div class="personal">
                 <?php
                         if (array_key_exists("login_user", $_SESSION)) {
-                    ?>
+                ?>
             <!-- # is gegevens van de user, moet nog worden gemaakt -->
             <a href="user.php"><?php echo $_SESSION ["login_user"]; ?></a>
             <a href="logout.php" class="user">Logout</a>
@@ -53,7 +53,7 @@ session_start();
     $(document).ready(function() {
 
         $('ul.navbar > li').each(function(x) {
-            console.log(x, window.location.href.includes($(this).text().toLowerCase()))
+            // console.log(x, window.location.href.includes($(this).text().toLowerCase()))
             if (
                 window.location.href.replace("index", "home").includes($(this).text().toLowerCase())) {
                 $(this).addClass('active');

@@ -30,7 +30,6 @@
                     <span class="close"><a href="index.php" class="closebtn">&times;</a></span>
                 </div>
                 <h1>Profile</h1>
-                <br>
                 <h3 class="email">Name</h3>
                 <p><?php echo $info['name'] ?></p>
                 <h3 class="email">Email</h3>
