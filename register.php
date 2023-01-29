@@ -14,7 +14,7 @@
         
         <div class="huh">
         <div class="container">
-        <span class="close"><a href="home.html">&times;</a></span>
+        <span class="close"><a href="index.php">&times;</a></span>
         <h1>Register</h1>
 
         <label for="name"><p class="name">Name</p></label>
