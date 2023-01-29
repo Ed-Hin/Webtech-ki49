@@ -27,16 +27,12 @@ li, a {
 header {
     /* of fixed, ligt eraan */
     position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #44859b;
     padding: 20px 1%;
-    margin: 0 auto;
 }
 
 /* Geldt voor de logo van de pagina */
@@ -50,6 +46,7 @@ header {
 .navbar {
     list-style: none;
     display: flex;
+    
 }
 
 .navbar li {
@@ -94,12 +91,7 @@ header {
     display: flex;
     flex-direction:column-reverse;
     min-height: 100%;
-    margin-bottom: -181px;
-}
 
-.posts:after {
-    content: "";
-    display: block;
 }
 
 .mainpage {
@@ -176,7 +168,7 @@ h1 {
 /* De titel van de post */
 h2 {
     text-align: left;
-    color: bl   
+    color: black;
 }
 
 /* De content van de post */

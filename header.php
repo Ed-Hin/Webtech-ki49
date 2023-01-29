@@ -8,7 +8,7 @@ session_start();
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="index.css">
     <title>WhoAsked</title>
     <link rel="icon" type="image/x-icon" href="logo_only_symbol.png">
 </head>
@@ -21,7 +21,9 @@ session_start();
 
 <body>
     <header>
-        <img src="logo_white.png" class="logo" alt="WhoAsked">
+        <!-- <div class="logo_space"> -->
+            <img src="logo_white.png" class="logo" alt="WhoAsked">
+        <!-- </div> -->
         <ul class="navbar">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="popular.php" class="nav-link">Popular</a></li>

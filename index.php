@@ -7,20 +7,16 @@ include "cookiespopup.php";
 <?php
     if (array_key_exists("login_user", $_SESSION)) {
     $userId = $_SESSION['user_id'];
-    $user = $_SESSION['login_user'];
     
-    $sql1 = "SELECT * FROM Posts WHERE user = '$userId'";
-    $sql2 = "SELECT * FROM Users where user = '$user'";
-    $result1 = mysqli_query($connection,$sql1);
-    $result2 = mysqli_query($connection,$sql2);
-        
-        $info = $result2->fetch_assoc();
+    $sql = "SELECT * FROM `Posts` INNER JOIN `Users` u on Posts.user = u.ID";
+    $result = mysqli_query($connection,$sql);
+
 ?>
-
+<br>
 <h1>Latest posts</h1>
-
+<br>
     <?php 
-            while($posts = $result1->fetch_assoc()) { ?>
+                while($posts = $result->fetch_assoc()) { ?>
     <div class="post_info">
         <a href="posts.php">
             <div class="container">
@@ -29,7 +25,7 @@ include "cookiespopup.php";
                 <p>
                 <p><?php echo $posts['category'] ?>
                 <p>
-                <p>By <?php echo $info['user'] ?></p>
+                <p>By <?php echo $posts['user'] ?></p>
                 <!-- USERSS?????? -->
             </div>
             <div class="extra" style="position:relative;">
@@ -37,9 +33,10 @@ include "cookiespopup.php";
             </div>
         </a>
     </div>
-</div>    
+</div> 
     <?php
-    } include "footer.php";} else { ?>
+    } ?> <br> 
+    <?php include "footer.php";} else { ?> 
     <div class="mainpage">
         <div class="txt">
             <h1 class="welcome">Welcome to<br>WhoAsked!</h1>
