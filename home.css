@@ -4,7 +4,6 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
     font-family: "Poppins";
 }
 
@@ -12,7 +11,9 @@
 body {
     background-color: #44859b;
     text-align: center;
-    min-height: 80vh;
+    min-height: 100vh;   
+    display: flex;
+    flex-direction: column;
 }
 
 /* Geldt voor de lists en ankers van de pagina */
@@ -37,6 +38,7 @@ header {
     align-items: center;
     background: #44859b;
     padding: 20px 1%;
+    margin: 0 auto;
 }
 
 /* Geldt voor de logo van de pagina */
@@ -102,6 +104,13 @@ h1 {
     color: white;
 }
 
+@media screen and (max-width: 1300px) { 
+    h1 {
+        text-align: center;
+        margin-left: 0;
+    }
+}
+
 /* Is een divisie van de pagina (1 post) */
 .post_info {
     width: 60%;
@@ -114,6 +123,15 @@ h1 {
     background-color: blanchedalmond;
 }
 
+@media screen and (max-width: 1300px) { 
+    .post_info {
+        float: none !important;
+        margin: 0 auto;
+        padding: 5px; 
+        margin-bottom: 10px;
+    }
+}
+
 /* Creeërt een kleine border wanneer een muis erop staat */
 .post:hover {
     border: 1px solid black;
@@ -122,8 +140,7 @@ h1 {
 
 /* Hoeveel ruimte er zit voor de tekst van de post (plek van de tekst)*/
 .container {
-    padding: 2px 16px;
-    margin: 15px;
+    margin: 10px 10px 50px 10px;
 }
 
 /* De titel van de post */
@@ -138,18 +155,11 @@ p {
     color: black;
 } 
 
-/* De afbeelding op de startpagina -> hoe groot en de positie*/
-.HomeImage {
-    position: relative;
-    margin-left: 60vw; 
-    width: 10;
-    height: 10;
-    max-width: 100%;
-    height: auto;
-}
-
-div {
-    display: block;
+/* De afbeelding op de startpagina -> hoe groot en de positie */
+@media screen and (max-width: 1300px) { 
+    .HomeImage {
+        display: none;
+    }
 }
 
 /* Zorgt ervoor dat de actieve pagina een andere kleur heeft op de header */

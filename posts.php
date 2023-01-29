@@ -1,6 +1,5 @@
 <?php
 include "header.php";
-include "footer.php";
 include("../../connection.php");
 
 $userId = $_SESSION['user_id'];
@@ -25,3 +24,7 @@ $posts = $result->fetch_assoc();
         </div>
     <?php } ?> 
 </div>
+
+<?php
+include "footer.php";
+?>

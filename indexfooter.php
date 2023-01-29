@@ -2,7 +2,7 @@
 <html lang="eng">
 
 <head>
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="indexfooter.css">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                 <li>
                     <h2 class="footer-title">Legal</h2>
                     <ul class="legal">
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="privacy.php">Privacy Policy</a></li>
                     </ul>
                 </li>
 
@@ -56,7 +56,7 @@
                 <li>
                     <h2 class="footer-title">Legal</h2>
                     <ul class="legal">
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="privacy.php">Privacy Policy</a></li>
                     </ul>
                 </li>
 
