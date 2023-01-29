@@ -9,6 +9,14 @@ footer {
     height: 1px;
 }
 
+@media screen and (max-height: 1920px) and (max-width: 1080px) {
+    footer {
+        position: absolute;
+        bottom: 0;
+
+    }
+}
+
 .footer {
     display: flex;
     flex-direction: row;

@@ -1,11 +1,17 @@
 <?php
 include "header.php";
 include("../../connection.php");
+include "cookiespopup.php";
 
 $userId = $_SESSION['user_id'];
+$user = $_SESSION['login_user'];
 
-$sql = "SELECT * FROM Posts WHERE user = '$userId'";
-$result = mysqli_query($connection,$sql);
+$sql1 = "SELECT * FROM Posts WHERE user = '$userId'";
+$sql2 = "SELECT * FROM Users where user = '$user'";
+$result1 = mysqli_query($connection,$sql1);
+$result2 = mysqli_query($connection,$sql2);
+
+$info = $result2->fetch_assoc();
 
 ?> 
 
@@ -14,12 +20,14 @@ $result = mysqli_query($connection,$sql);
     <?php
         if (array_key_exists("login_user", $_SESSION)) {
             // ERROR ALS NIET INGELOGD???
-            while($posts = $result->fetch_assoc()) { ?> 
+            while($posts = $result1->fetch_assoc()) { ?> 
         <div class="post_info">
             <a href="posts.php">
-            <div class="container">    
+            <div class="container">  
             <h2><?php echo $posts['title'] ?></h2>
             <p><?php echo $posts['contents'] ?><p>
+            <p><?php echo $posts['category'] ?><p>
+            <p>By <?php echo $info['user'] ?></p>
             <!-- USERSS?????? -->
             </div>
             <div class="extra" style="position:relative;">

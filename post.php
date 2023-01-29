@@ -7,7 +7,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = mysqli_real_escape_string($connection, $_POST['title']);
     $content = mysqli_real_escape_string($connection, $_POST['content']);
     $userId = $_SESSION['user_id'];
-    
+    $user = $_SESSION['login_user'];
+
     $sql = "INSERT INTO `Posts` (`postid`, `user`, `datetime`, `category`, `title`, `contents`, `likes`) VALUES (NULL, '$userId', CURRENT_TIMESTAMP, '$topics', '$title', '$content', '0')";
     $result = mysqli_query($connection,$sql);
     // $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
