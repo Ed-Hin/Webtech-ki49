@@ -7,8 +7,6 @@ footer {
     text-align: center;
     display: block;
     height: 1px;
-    bottom: 0;
-    position: absolute;
 }
 
 .footer {
@@ -17,7 +15,6 @@ footer {
     flex-wrap: wrap;
     padding: 0px 6% 0px 6%;
     background-color: #305e6d;
-    
 }
 
 .footer-left {

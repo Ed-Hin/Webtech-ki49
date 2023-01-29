@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
 
 /* Geldt voor de hele webpagina */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,9 +12,6 @@
 body {
     background-color: #44859b;
     text-align: center;
-    min-height: 100vh;   
-    display: flex;
-    flex-direction: column;
 }
 
 /* Geldt voor de lists en ankers van de pagina */
@@ -93,22 +91,50 @@ header {
 .posts {
     max-width: 100%;
     margin: 0;
+    display: flex;
+    flex-direction:column-reverse;
+    min-height: 100%;
+    margin-bottom: -181px;
 }
+
+.posts:after {
+    content: "";
+    display: block;
+}
+
+.mainpage {
+    align-items: center;
+    position: absolute;
+    height: 65vh;
+    width: 60vw;
+    display: flex;
+    margin: 20vh 35vw;
+}
+
+.HomeImage {
+    max-width: 100%;
+}  
 
 /* Geldt voor de tekst 'Latest posts' */
 h1 {
-    text-align: left;
     margin-top: 100px;
     margin-left: 100px;
     padding: 0;
     color: white;
+    text-align: center;
+    margin-left: 0;
 }
 
-@media screen and (max-width: 1300px) { 
-    h1 {
-        text-align: center;
-        margin-left: 0;
-    }
+
+.welcome {
+    text-align: left;
+    font-size: 50px;
+}
+
+.sign {
+    text-align: left;
+    margin-left: 20px;
+    color: white;
 }
 
 /* Is een divisie van de pagina (1 post) */
@@ -121,16 +147,20 @@ h1 {
     float: left;
     cursor: pointer;
     background-color: blanchedalmond;
+    float: none !important;
+    margin: 0 auto;
+    padding: 5px; 
+    margin-bottom: 10px;
 }
 
-@media screen and (max-width: 1300px) { 
+/* @media screen and (max-width: 1300px) { 
     .post_info {
         float: none !important;
         margin: 0 auto;
         padding: 5px; 
         margin-bottom: 10px;
     }
-}
+} */
 
 /* Creeërt een kleine border wanneer een muis erop staat */
 .post:hover {
@@ -146,7 +176,7 @@ h1 {
 /* De titel van de post */
 h2 {
     text-align: left;
-    color: black;
+    color: bl   
 }
 
 /* De content van de post */
@@ -154,13 +184,6 @@ p {
     text-align: left;
     color: black;
 } 
-
-/* De afbeelding op de startpagina -> hoe groot en de positie */
-@media screen and (max-width: 1300px) { 
-    .HomeImage {
-        display: none;
-    }
-}
 
 /* Zorgt ervoor dat de actieve pagina een andere kleur heeft op de header */
 .navbar > .active > a {

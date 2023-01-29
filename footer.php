@@ -7,7 +7,6 @@
 
 <body>
 </body>
-
 <footer>
         <div class="footer">
             <div class="footer-left">
