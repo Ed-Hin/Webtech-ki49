@@ -1,7 +1,7 @@
 <?php
 include "header.php";
 include("../../connection.php");
-
+// Brengt naar de nieuwste post die is gemaakt
 $userId = $_SESSION['user_id'];
 
 $sql = "SELECT * FROM Posts WHERE user = '$userId'";
@@ -14,7 +14,7 @@ $posts = $result->fetch_assoc();
 <div class="posts">
     <?php { ?> 
         <div class="post">
-            <div class="container">    
+            <div class="container">
             <h2><?php echo $posts['title'] ?></h2>
             <p><?php echo $posts['contents'] ?><p>
             </div>

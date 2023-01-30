@@ -95,7 +95,7 @@ header {
 .mainpage {
     align-items: center;
     position: absolute;
-    height: 65vh;
+    height: 50vh;
     width: 60vw;
     display: flex;
     margin: 20vh 35vw;
@@ -142,15 +142,6 @@ h1 {
     padding: 5px; 
     margin-bottom: 10px;
 }
-
-/* @media screen and (max-width: 1300px) { 
-    .post_info {
-        float: none !important;
-        margin: 0 auto;
-        padding: 5px; 
-        margin-bottom: 10px;
-    }
-} */
 
 /* Creeërt een kleine border wanneer een muis erop staat */
 .post:hover {

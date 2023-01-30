@@ -14,5 +14,6 @@ mysqli_query($connection, $sql);
 } catch(PDOExeption $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
-// redirect naar homepage of ingelogde page idk
+
+header("location: index.php");
 ?>
