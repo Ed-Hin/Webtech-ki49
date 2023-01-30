@@ -4,24 +4,24 @@
 
 	if (isset($_POST['liked'])) {
 		$postid = $_POST['postid'];
-		$result = mysqli_query($con, "SELECT * FROM posts WHERE id=$postid");
+		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
 		$n = $row['likes'];
 
-		mysqli_query($con, "INSERT INTO likes (userid, postid) VALUES (1, $postid)");
-		mysqli_query($con, "UPDATE posts SET likes=$n+1 WHERE id=$postid");
+		mysqli_query($connection, "INSERT INTO Likes (userid, postid) VALUES (1, $postid)");
+		mysqli_query($connection, "UPDATE Posts SET likes=$n+1 WHERE postid=$postid");
 
 		echo $n+1;
 		exit();
 	}
 	if (isset($_POST['unliked'])) {
 		$postid = $_POST['postid'];
-		$result = mysqli_query($con, "SELECT * FROM posts WHERE id=$postid");
+		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
 		$n = $row['likes'];
 
-		mysqli_query($con, "DELETE FROM likes WHERE postid=$postid AND userid=1");
-		mysqli_query($con, "UPDATE posts SET likes=$n-1 WHERE id=$postid");
+		mysqli_query($connection, "DELETE FROM Likes WHERE postid=$postid AND userid=1");
+		mysqli_query($connection, "UPDATE Posts SET likes=$n-1 WHERE postid=$postid");
 		
 		echo $n-1;
 		exit();
@@ -34,7 +34,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Like and unlike system</title>
+	<title>Like and unlike</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="styles.css">
 </head>
@@ -48,16 +48,16 @@
 				<div style="padding: 2px; margin-top: 5px;">
 				<?php 
 					// determine if user has already liked this post
-					$results = mysqli_query($connection, "SELECT * FROM Likes WHERE userid=1 AND postid=".$row['postid']."");
+					$results = mysqli_query($connection, "SELECT * FROM Likes WHERE userid=1 AND postid=".$row['id']."");
 
 					if (mysqli_num_rows($results) == 1 ): ?>
 						<!-- user already likes post -->
-						<span class="unlike fa fa-thumbs-up" data-id="<?php echo $row['userid']; ?>"></span> 
-						<span class="like hide fa fa-thumbs-o-up" data-id="<?php echo $row['userid']; ?>"></span> 
+						<span class="unlike fa fa-thumbs-up" data-id="<?php echo $row['id']; ?>"></span> 
+						<span class="like hide fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
 					<?php else: ?>
 						<!-- user has not yet liked post -->
-						<span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['userid']; ?>"></span> 
-						<span class="unlike hide fa fa-thumbs-up" data-id="<?php echo $row['userid']; ?>"></span> 
+						<span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['id']; ?>"></span> 
+						<span class="unlike hide fa fa-thumbs-up" data-id="<?php echo $row['id']; ?>"></span> 
 					<?php endif ?>
 
 					<span class="likes_count"><?php echo $row['likes']; ?> likes</span>
@@ -73,7 +73,7 @@
 	$(document).ready(function(){
 		// when the user clicks on like
 		$('.like').on('click', function(){
-			var postid = $(this).data('id');
+			var postid = $(this).data('postid');
 			    $post = $(this);
 
 			$.ajax({
