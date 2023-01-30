@@ -5,7 +5,7 @@ include "footer.php";
 
 <link rel="stylesheet" href="popular.css">
 
-            <div class="posts">
+            <div class="popularposts">
                 <h1> Popular posts</h1>
                 <!--Filter Box-->
                 <div class="filter-box">
@@ -25,16 +25,16 @@ include "footer.php";
                     <div class="container">
                         <h2>Ik vind dit echt vet</h2>
                         <p>jatoch</p>
+                        <h4> <input type="text" id="comment" placeholder="Add comment..."> </h4>
                         <h3>10000 Likes | Published on: ../../....</h3>
-                        <h4> <input type="text" id="comment" placeholder="Add comment..."> <h4>
                     </div>
                 </div>
                 <div class="popular-post2">
                     <div class="container2">
                         <h2>Ik vind dit echt vet</h2>
                         <p>jatoch</p>
-                        <h3>500 Likes | Published on: ../../....</h3>
                         <h4> <input type="text" id="comment" placeholder="Add comment..."> <h4>
+                        <h3>500 Likes | Published on: ../../....</h3>
                     </div>
                 </div>
             </div>

@@ -31,6 +31,10 @@ p {
     text-align: center;
 }
 
+h4 {
+    text-align: center;
+}
+
 select {
     width: 40%;
     text-align: left;
@@ -100,16 +104,6 @@ select {
 
 a {
     text-decoration: none;
-}
-
-input[type=text], input[type=password], input[type=email] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #44859b;
-    box-sizing: border-box;
-    text-align: auto;
-    border-radius: 3px;
 }
 
 .container {
