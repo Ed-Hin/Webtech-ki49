@@ -9,11 +9,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $userId = $_SESSION['user_id'];
     $user = $_SESSION['login_user'];
 
-    $sql = "INSERT INTO `Posts` (`postid`, `user`, `datetime`, `category`, `title`, `contents`, `likes`) VALUES (NULL, '$userId', CURRENT_TIMESTAMP, '$topics', '$title', '$content', '0')";
-    $result = mysqli_query($connection,$sql);
-    // $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-    if ($result) {
+    if ($topics == "Select topic") {
+        $error = "You have forgotten to select a topic";
+    }
+    elseif ($topics and $title and $content and $userId) {
+        $sql = "INSERT INTO `Posts` (`postid`, `user`, `datetime`, `category`, `title`, `contents`, `likes`) VALUES (NULL, '$userId', CURRENT_TIMESTAMP, '$topics', '$title', '$content', '0')";
+        $result = mysqli_query($connection,$sql);
         header("location: index.php");
     } 
 }
@@ -32,18 +33,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <form action="post.php" method="post">
-        <?php
-            if (isset($error)) {
-                echo "<h4> Error: " . $error . "</h4>";
-            }
-        ?>
         <div>
             <div class="container">
                 <div style="position: relative;">
                     <span class="close"><a href="index.php" class="closebtn">&times;</a></span>
                 </div>
                 <h1>Create your post</h1>
-
+                <?php
+                if (isset($error)) {
+                    echo "<h4> Error: " . $error . "</h4>";
+                }
+                ?>
                 <!--Filter Box-->
                 <div class="filter-box">
                     <select name="topics" id="topicslist">
@@ -60,11 +60,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="title">
                         <p class="title">Title</p>
                     </label>
-                    <textarea type="text" id="title" name="title"></textarea>
+                    <textarea type="text" id="title" name="title" required></textarea>
                     <label for="content">
                         <p class="content">Content</p>
                     </label>
-                    <textarea type="text" id="content" name="content"></textarea>
+                    <textarea type="text" id="content" name="content" required></textarea>
                     <input type="submit" value="Post">
     </form>
     </div>
