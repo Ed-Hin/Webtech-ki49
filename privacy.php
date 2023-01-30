@@ -1,11 +1,13 @@
 <?php
     include "header.php";
+    include "footer.php";
 ?>
 
 <head>
     <link rel="stylesheet" href="privacy.css"> 
 </head>
-
+<div class="privacycontainer">
+<br><br><br>
 <h1>Privacy Policy</h1>
 <p>Last updated: January 29, 2023</p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
@@ -187,7 +189,4 @@
 <p>By phone number: +31 (0)20 525 1401</p>
 </li>
 </ul>
-
-<?php
-    include "indexfooter.php";
-?>
+</div>

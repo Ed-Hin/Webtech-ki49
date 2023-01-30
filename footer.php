@@ -27,7 +27,7 @@
                 <li>
                     <h2 class="footer-title">Legal</h2>
                     <ul class="legal">
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="privacy.php">Privacy Policy</a></li>
                     </ul>
                 </li>
 
@@ -55,7 +55,7 @@
                 <li>
                     <h2 class="footer-title">Legal</h2>
                     <ul class="legal">
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="privacy.php">Privacy Policy</a></li>
                     </ul>
                 </li>
 
