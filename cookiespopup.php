@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <img src="cookies.jpg" alt="cookies.jpg">
+        <img src="cookie.png" alt="cookies">
         <div class="content">
             <p>This website uses cookies to ensure you get the best experience on our website.</p>
             <div class="buttons">

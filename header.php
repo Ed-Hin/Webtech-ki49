@@ -51,7 +51,7 @@ session_start();
     $(document).ready(function() {
 
         $('ul.navbar > li').each(function(x) {
-            // console.log(x, window.location.href.includes($(this).text().toLowerCase()))
+            console.log(x, window.location.href.includes($(this).text().toLowerCase()))
             if (    
                 window.location.href.replace("index", "home").includes($(this).text().toLowerCase())) {
                 $(this).addClass('active');

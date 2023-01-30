@@ -7,7 +7,7 @@ include "footer.php";
 <html lang="eng">
 <head>
 
-    <link rel="stylesheet" href="cookies3.css">
+    <link rel="stylesheet" href="cookietxt.css">
 
 </head>
 <body>
