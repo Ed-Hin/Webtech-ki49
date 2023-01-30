@@ -8,6 +8,12 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 10;
+    width: 100%;
+    margin-top: -200px;
 }
 
 .footer {
@@ -34,6 +40,17 @@ footer {
     border-top: 1px solid black;
     padding: 5px 0 5px 0;
     background-color: #305e6d;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    border-top: 1px solid black;
+    margin-bottom: 10px;
+    padding-top: 10px;
 }
 
 .footer ul {

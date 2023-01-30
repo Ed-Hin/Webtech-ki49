@@ -7,14 +7,14 @@
 }
 
 body {
-    background-color: #448a9b;
+    background-color: #44859b;
     text-align: center
 }
 
 li, a {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     color: white;   
     text-decoration: none;
     text-align: center;
@@ -29,8 +29,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #448a9b;
-    padding: 20px 1%;
+    background: transparent;
+    padding: 30px 1%;
 }
 
 .logo {
@@ -77,29 +77,39 @@ header {
     color: #17c4be;
 }
 
-
-.text {
-    color: white;
-    font-weight: 500;
-    font-family: "Poppins";
-    font-size: 1.5rem;
-    padding: 3% 15%;
-    text-align: center;
+onpage {
+    color: rgb(70, 37, 214);
 }
 
-h2 {
-    color: white;
-    font-family: "Poppins";
-    font-weight: 1000;
-    font-size: 2rem;
-    text-align: center;
+ .searchbar {
+    float: center;
 }
 
-/* MOET OP ELKE PAGINA */
-.navbar > .active > a {
-    color: #17c4be;
+ .searchbar input[type="text"] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 22px;
+    border-radius: 50px;
 }
 
-.nav-link {
-    color: white;
+ .searchbar button {
+    float: center;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 22px;
+    cursor: pointer;
+    color:#44859b;
+    border-radius: 25px;
 }
+
+ .searchbar button:hover {
+    background: #ccc;
+  }
+
+  .topics {
+    text-align: left;
+    font-size: 20px;
+    margin-left: 15px;
+  }

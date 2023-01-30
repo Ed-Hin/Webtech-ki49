@@ -14,6 +14,5 @@ mysqli_query($connection, $sql);
 } catch(PDOExeption $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
-
 header("location: index.php");
 ?>

@@ -12,12 +12,9 @@ session_start();
     <title>WhoAsked</title>
     <link rel="icon" type="image/x-icon" href="logo_only_symbol.png">
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
-</script>
-<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js">
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 
 <body>
     <header>
@@ -55,7 +52,7 @@ session_start();
 
         $('ul.navbar > li').each(function(x) {
             // console.log(x, window.location.href.includes($(this).text().toLowerCase()))
-            if (
+            if (    
                 window.location.href.replace("index", "home").includes($(this).text().toLowerCase())) {
                 $(this).addClass('active');
             }
@@ -63,5 +60,4 @@ session_start();
     })
     </script>
 </body>
-
 </html>
