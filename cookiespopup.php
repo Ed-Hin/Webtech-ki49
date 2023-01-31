@@ -13,7 +13,7 @@
             <p>This website uses cookies to ensure you get the best experience on our website.</p>
             <div class="buttons">
                 <button class="item">I understand</button>
-                <a href="cookies2.php" class="item">Learn more</a>
+                <a href="cookietxt.php" class="item">Learn more</a>
             </div>
         </div>
     </div>
