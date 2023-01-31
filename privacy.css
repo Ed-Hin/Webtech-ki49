@@ -9,7 +9,12 @@ h1 {
 li {
     text-align: left;
 }
+
 .privacycontainer {
     padding: 40px;
     text-align: left;
+}
+
+footer {
+    position: fixed !important;
 }

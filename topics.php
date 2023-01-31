@@ -69,7 +69,6 @@ include("../../connection.php");
 
 
     <?php     } ?>
-    <div class="clear"></div>
 </body>
 <?php
 include "footer.php";
