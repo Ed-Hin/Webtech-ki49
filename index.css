@@ -12,9 +12,6 @@
 body {
     background-color: #44859b;
     text-align: center;
-    flex: 1 0 auto;
-    position: relative;
-    flex-direction: column;
     height: 100vh;
 }
 
@@ -205,8 +202,7 @@ a button:hover {
     box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
 
-@media only screen and (min-height: 800px) {
-    footer {
-        position:fixed;
-    }
+.clear {
+    clear: both; 
+    height: 60px;
 }

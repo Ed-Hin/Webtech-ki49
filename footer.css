@@ -9,6 +9,7 @@ footer {
     left: 0;
     width: 100%;
     flex-shrink: 0;
+    position: inherit;
 }
 
 .footer_container {

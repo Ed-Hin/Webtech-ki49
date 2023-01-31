@@ -101,10 +101,8 @@ h2 {
 .nav-link {
     color: white;
 }
-.nav-link {
-    color: white;
-}
 
 footer {
-    position: absolute;
+    position: absolute !important;
+    bottom: 0;
 }

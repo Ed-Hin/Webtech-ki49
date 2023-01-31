@@ -17,11 +17,11 @@ include "cookiespopup.php";
 <br>
 <h1>Latest posts</h1>
 <div class="posts">
+
 <?php 
     while($posts = $result->fetch_assoc()) { ?>
     <div class="post_info">
         <div class="container">
-            <!-- <a href="index.php?id=user_post.php".$post->ID."> -->
             <a href="user_post.php?id=<?php echo $posts['postid'];?>&username=<?php echo $posts['user'];?>">
             <h2><?php echo $posts['title'] ?></h2>
             <p><?php echo $posts['contents'] ?></p>
