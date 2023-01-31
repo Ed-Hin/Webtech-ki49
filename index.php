@@ -9,15 +9,15 @@ if (array_key_exists("login_user", $_SESSION)) {
 
     $sql = "SELECT * FROM `Posts` JOIN `Users` u on Posts.user = u.ID";
     $result = mysqli_query($connection, $sql);
+
 ?>
 
 <body>
     <br>
     <h1>Latest posts</h1>
     <div class="posts">
-
-        <?php
-while ($posts = $result->fetch_assoc()) {?>
+        <?php 
+while ($posts = $result->fetch_assoc()) { ?>
         <div class="post_info">
             <div class="container">
                 <a href="user_post.php?id=<?php echo $posts['postid']; ?>&username=<?php echo $posts['user']; ?>">
@@ -32,13 +32,10 @@ while ($posts = $result->fetch_assoc()) {?>
                 </a>
             </div>
         </div>
-    </div>
 </body>
-
-<?php
-}
+<?php }
 ?>
-
+</div>
 <?php
 } else {    
 ?>
@@ -58,6 +55,6 @@ while ($posts = $result->fetch_assoc()) {?>
 ?>
 
 <?php
-include "footer.php";
-include "cookiespopup.php";
+    include "footer.php";
+    include "cookiespopup.php";
 ?>

@@ -139,7 +139,6 @@ div {
 }
 
 /* De tekst voor likes en datum */
-
 .extra span {
     position: absolute;
     font-size: 15px;
@@ -149,8 +148,23 @@ div {
     padding: 10px;
 } 
 
-footer {
-    position: fixed !important;
+.button {
+    padding: 0 10px 0 10px;
+    margin-bottom: 0.3rem;
+    border-radius: 5px;
+    box-shadow: #17c4be;
+    box-sizing: border-box;
+    /* border: 2px solid blue; */
+    transition: all 0.3s ease-out ;
+    color: black;
+    background-color: #44859b;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: white;
+    box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
 
 .content {
@@ -164,7 +178,6 @@ footer {
     word-wrap: break-word;
 }
 
-
 .message {
     width: 49%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -174,4 +187,8 @@ footer {
     margin: auto;
     margin-top: 40px;
     word-wrap: break-word;
+}
+
+footer {
+    position: fixed !important;
 }
