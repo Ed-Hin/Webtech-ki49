@@ -9,8 +9,7 @@ if (array_key_exists("login_user", $_SESSION)) {
 
     $sql = "SELECT * FROM `Posts` JOIN `Users` u on Posts.user = u.ID";
     $result = mysqli_query($connection, $sql);
-
-    ?>
+?>
 
 <body>
     <br>
@@ -26,7 +25,6 @@ while ($posts = $result->fetch_assoc()) {?>
                     <p><?php echo $posts['contents'] ?></p>
                     <p><?php echo $posts['category'] ?></p>
                     <p>By <?php echo $posts['user'] ?></p>
-                    <!-- USERSS?????? -->
                     <div class="extra" style="position:relative;">
                         <span> <?php echo $posts['likes'] ?> Likes | Published on:
                             <?php echo $posts['datetime'] ?></span>
@@ -34,11 +32,17 @@ while ($posts = $result->fetch_assoc()) {?>
                 </a>
             </div>
         </div>
+    </div>
 </body>
+
 <?php
-}?> 
-</div>
-<?php } else { ?>
+}
+?>
+
+<?php
+} else {    
+?>
+
 <div class="mainpage">
     <div class="txt">
         <h1 class="welcome">Welcome to<br>WhoAsked!</h1>
@@ -48,7 +52,10 @@ while ($posts = $result->fetch_assoc()) {?>
         <img src="interaction.png" alt="interaction" class="interaction" width="550" height="550">
     </div>
 </div>
-<?php } ?>
+
+<?php 
+} 
+?>
 
 <?php
 include "footer.php";
