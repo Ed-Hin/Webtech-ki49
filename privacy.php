@@ -28,11 +28,7 @@
 <p><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to WhoAsked, Science Park 904 1098 XH Amsterdam.</p>
 </li>
 <li>
-<p><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any
-Popular posts
-￼
-Today
- other device by a website, containing the details of Your browsing history on that website among its many uses.</p>
+<p><strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.</p>
 </li>
 <li>
 <p><strong>Country</strong> refers to:  Netherlands</p>

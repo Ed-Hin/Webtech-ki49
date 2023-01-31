@@ -34,8 +34,7 @@ header {
 }
 
 /* Geldt voor de lists en ankers van de pagina */
-li,
-a {
+li, a {
     font-weight: 500;
     font-size: 16px;
     color: white;
@@ -82,6 +81,25 @@ a {
 /* Hover zorgt ervoor dat als de muis erop staat dat de kleur veranderd */
 .personal a:hover {
     color: #17c4be;
+}
+
+/* Post button in de header */
+button {
+    padding: 0 10px 0 10px;
+    border-radius: 5px;
+    box-shadow: #17c4be;
+    box-sizing: border-box;
+    border: 2px blue;
+    transition: all 0.3s ease-out ;
+    color: black;
+    background-color: blanchedalmond;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+a button:hover {
+    color: #17c4be;
+    box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
 
 /* Alle posts bij elkaar */
@@ -142,7 +160,7 @@ p {
 }
 
 /* Zorgt ervoor dat de actieve pagina een andere kleur heeft op de header */
-.navbar>.active>a {
+.navbar > .active > a {
     color: #17c4be;
 }
 
