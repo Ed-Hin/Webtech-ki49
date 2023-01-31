@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
 
 /* Geldt voor de hele webpagina */
-
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     font-family: "Poppins";
 }
 
@@ -12,10 +12,7 @@
 body {
     background-color: #44859b;
     text-align: center;
-    flex: 1 0 auto;
-    position: relative;
-    flex-direction: column;
-    height: 100vh;
+    min-height: 80vh;
 }
 
 /* Geldt voor de lists en ankers van de pagina */
@@ -31,6 +28,8 @@ li, a {
 header {
     /* of fixed, ligt eraan */
     position: absolute;
+    top: 0;
+    right: 0;
     z-index: 1000;
     width: 100%;
     display: flex;
@@ -51,7 +50,6 @@ header {
 .navbar {
     list-style: none;
     display: flex;
-    
 }
 
 .navbar li {
@@ -93,70 +91,30 @@ header {
 .posts {
     max-width: 100%;
     margin: 0;
-    display: flex;
-    flex-direction:column-reverse;
-}
-
-.mainpage {
-    align-items: center;
-    position: absolute;
-    height: 50vh;
-    width: 60vw;
-    display: flex;
-    margin: 20vh 35vw;
-}
-
-.HomeImage {
-    max-width: 100%;
-}  
-
-/* Geldt voor de tekst 'Latest posts' */
-h1 {
-    margin-top: 100px;
-    margin-left: 100px;
-    padding: 0;
-    color: white;
-    text-align: center;
-    margin-left: 0;
-}
-
-
-.welcome {
-    text-align: left;
-    font-size: 50px;
-}
-
-.sign {
-    text-align: left;
-    margin-left: 20px;
-    color: white;
+    padding-top: 100px;
 }
 
 /* Is een divisie van de pagina (1 post) */
-.post_info {
+.post {
     width: 60%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
-    margin-left: 100px;
-    margin-bottom: 10px;
-    float: left;
-    cursor: pointer;
     background-color: blanchedalmond;
-    float: none !important;
-    margin: 0 auto;
-    padding: 5px; 
-    margin-bottom: 10px;
+    padding: 2px 16px;
+    margin: auto;
+    margin-top: 40px;
+    word-wrap: break-word;
+}
+
+.container {
+    min-height: 200px;
+    word-wrap: break-word;
 }
 
 /* Creeërt een kleine border wanneer een muis erop staat */
 .post:hover {
     border: 1px solid black;
     border-radius: 5px;
-}
-
-/* Hoeveel ruimte er zit voor de tekst van de post (plek van de tekst)*/
-.container {
-    margin: 10px 10px 50px 10px;
 }
 
 /* De titel van de post */
@@ -171,35 +129,26 @@ p {
     color: black;
 } 
 
+div {
+    display: block;
+}
+
 /* Zorgt ervoor dat de actieve pagina een andere kleur heeft op de header */
 .navbar > .active > a {
     color: #17c4be;
 }
 
 /* De tekst voor likes en datum */
+
 .extra span {
     position: absolute;
     font-size: 15px;
     color: black;
+    bottom: 0;
     right: 0;
     padding: 10px;
-}
+} 
 
-/* Post button */
-button {
-    padding: 0 10px 0 10px;
-    border-radius: 5px;
-    box-shadow: #17c4be;
-    box-sizing: border-box;
-    border: 2px blue;
-    transition: all 0.3s ease-out ;
-    color: black;
-    background-color: blanchedalmond;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-a button:hover {
-    color: #17c4be;
-    box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+footer {
+    position: fixed;
 }
