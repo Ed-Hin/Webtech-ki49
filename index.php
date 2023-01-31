@@ -1,7 +1,6 @@
 <?php
 include "header.php";
 include("../../connection.php");
-include "cookiespopup.php";
 ?>
 
 <?php
@@ -36,7 +35,7 @@ include "cookiespopup.php";
     </div>
 </body> 
 <?php
-    } ?>    </div> <br>
+    } ?>    </div>
 <?php } else { ?> 
 <div class="mainpage">
     <div class="txt">
@@ -49,4 +48,7 @@ include "cookiespopup.php";
 </div>
 <?php  } ?>
 
-<?php include "footer.php"; ?>
+<?php 
+include "footer.php"; 
+include "cookiespopup.php";
+?>

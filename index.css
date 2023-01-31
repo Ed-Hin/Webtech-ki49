@@ -12,7 +12,6 @@
 body {
     background-color: #44859b;
     text-align: center;
-    height: 100vh;
 }
 
 /* Geldt voor de lists en ankers van de pagina */
@@ -200,9 +199,4 @@ button {
 a button:hover {
     color: #17c4be;
     box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
-}
-
-.clear {
-    clear: both; 
-    height: 60px;
 }

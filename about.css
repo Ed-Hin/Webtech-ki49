@@ -102,7 +102,7 @@ h2 {
     color: white;
 }
 
-footer {
+.footer, footer {
     position: absolute !important;
     bottom: 0;
 }

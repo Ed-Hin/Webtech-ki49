@@ -150,5 +150,5 @@ div {
 } 
 
 footer {
-    position: fixed;
+    position: fixed !important;
 }
