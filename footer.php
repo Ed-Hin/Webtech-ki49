@@ -4,11 +4,8 @@
 <head>
     <link rel="stylesheet" href="footer.css">
 </head>
-
-<body>
-</body>
 <footer>
-        <div class="footer">
+        <div class="footer_container">
             <div class="footer-left">
                 <img src="logo_white_small.png" class="logo">
                 <p>Communicate with others through our forum!</p>
@@ -34,7 +31,7 @@
                 <li>
                     <h2 class="footer-title">Contact</h2>
                     <ul class="about">
-                        <li>+31 (0)20 525 1401 </li>
+                        <li>+31 (0)20 525 1401</li>
                         <li><p>Science Park 904 1098 XH Amsterdam</p></li>
                         <li><p>servicedesk-fs@uva.nl</p></li>
                 </li>

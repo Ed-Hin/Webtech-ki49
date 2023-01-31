@@ -21,9 +21,7 @@ li, a {
 }
 
 header {
-    position: fixed;
-    top: 0;
-    right: 0;
+    position: absolute;
     z-index: 1000;
     width: 100%;
     display: flex;
@@ -105,4 +103,8 @@ h2 {
 }
 .nav-link {
     color: white;
+}
+
+footer {
+    position: absolute;
 }
