@@ -41,8 +41,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1>Create your post</h1>
                 <?php
                 if (isset($error)) {
-                    echo "<h4> Error: " . $error . "</h4>";
-                }
+                    ?> <h4 class="error"><?php echo $error ?></h4>
+<?php                }
                 ?>
                 <!--Filter Box-->
                 <div class="filter-box">
@@ -54,6 +54,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         <option value="Memes">Memes</option>
                         <option value="Politics">Politics</option>
                         <option value="Music">Music</option>
+                        <option value="Music">Sports</option>
+                        <option value="Music">Gaming</option>>
                     </select>
                 </div>
                 <div class="post-box">

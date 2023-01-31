@@ -132,3 +132,8 @@ a {
 .closebtn {
     color: #44859b;
 }
+
+.error {
+    color: #44859b;
+    padding: 10px;
+}
