@@ -100,7 +100,7 @@ header {
 .mainpage {
     align-items: center;
     position: absolute;
-    height: 50vh;
+    height: 40vh;
     width: 60vw;
     display: flex;
     margin: 20vh 35vw;
@@ -108,6 +108,7 @@ header {
 
 .HomeImage {
     max-width: 100%;
+    margin-top: 50px;
 }  
 
 /* Geldt voor de tekst 'Latest posts' */
@@ -202,4 +203,10 @@ button {
 a button:hover {
     color: #17c4be;
     box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+@media only screen and (min-height: 800px) {
+    footer {
+        position:fixed;
+    }
 }

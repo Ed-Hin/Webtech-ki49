@@ -29,7 +29,7 @@ include "cookiespopup.php";
             <p>By <?php echo $posts['user'] ?></p>
             <!-- USERSS?????? -->
             <div class="extra" style="position:relative;">
-                <span> Likes | Published on: <?php echo $posts['datetime'] ?></span>
+                <span> <?php echo $posts['likes'] ?> Likes | Published on: <?php echo $posts['datetime'] ?></span>
             </div>
             </a>
         </div>
