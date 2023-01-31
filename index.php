@@ -34,7 +34,9 @@ include "cookiespopup.php";
             </a>
         </div>
     </div>
-</body> 
+
+</body>
+
 <?php
     } ?>    </div> <br>
 <?php } else { ?> 

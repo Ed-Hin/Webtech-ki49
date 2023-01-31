@@ -206,3 +206,9 @@ a button:hover {
     clear: both; 
     height: 60px;
 }
+
+/* commentsection */
+
+.Input {
+    text-align: left;
+}
