@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php
                 if (isset($error)) {
                     ?> <h4 class="error"><?php echo $error ?></h4>
-<?php                }
+                <?php }
                 ?>
                 <!--Filter Box-->
                 <div class="filter-box">
