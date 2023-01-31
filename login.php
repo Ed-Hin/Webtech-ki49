@@ -16,7 +16,6 @@
         if (password_verify($mypassword, $row["pass"])) {
             $_SESSION['login_user'] = $username;
             $_SESSION['user_id'] = $row["ID"];
-
             header("location: index.php");
         } else {
             $error = "Your Login Name or Password is invalid";

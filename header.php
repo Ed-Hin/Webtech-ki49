@@ -1,5 +1,13 @@
 <?php
-session_start();
+    include("../../connection.php");
+    session_start();
+
+    if (array_key_exists("login_user", $_SESSION)) {
+        $username = $_SESSION['login_user'];
+        $sql = "SELECT * FROM Users WHERE user = '$username'";
+        $result = mysqli_query($connection,$sql);
+        $user_info = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +26,7 @@ session_start();
 
 <body>
     <header>
-        <!-- <div class="logo_space"> -->
-            <img src="logo_white.png" class="logo" alt="WhoAsked">
-        <!-- </div> -->
+        <img src="logo_white.png" class="logo" alt="WhoAsked">
         <ul class="navbar">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="popular.php" class="nav-link">Popular</a></li>
@@ -29,20 +35,26 @@ session_start();
         </ul>
         <div class="personal">
             <?php
-                        if (array_key_exists("login_user", $_SESSION)) {
-                ?>
-            <!-- # is gegevens van de user, moet nog worden gemaakt -->
+                if (array_key_exists("login_user", $_SESSION) and $user_info['isadmin'] == 1) {
+                    ?>
+            <a href="all_users.php">All Users</a>
             <a href="user.php"><?php echo $_SESSION ["login_user"]; ?></a>
             <a href="logout.php" class="user">Logout</a>
-            <a href="post.php"><button>Post</button></a>
+            <a href="post.php"><button>POST</button></a>
+            
+            <?php
+                } elseif (array_key_exists("login_user", $_SESSION)) { 
+                ?>
+                <a href="user.php"><?php echo $_SESSION ["login_user"]; ?></a>
+                <a href="logout.php" class="user">Logout</a>
+                <a href="post.php"><button>POST</button></a>
 
             <?php
                     } else {
                 ?>
-
-            <a href="login.php" class="user">Login</a>
-            <a href="register.php">Register</a>
-            <?php
+                <a href="login.php" class="user">Login</a>
+                <a href="register.php">Register</a>
+                <?php
                     }
                 ?>
         </div>
