@@ -76,15 +76,14 @@
 </div>
 </div>
 <?php } ?>
-<div class="wrapper">
-    <form action="" method="post" class="form">
-        <textarea name="message" value="message" cols="30" rows="1" class="message" placeholder="Comment..."></textarea>
-        <button type="submit" value="Post" class="btn" name="submit_comment">Submit Comment</button>
-    </form>
-</div>
 
-<h3> Comments </h3>
 <div class="content">
+    <div class="wrapper">
+        <form action="" method="post" class="form">
+            <textarea name="message" value="message" cols="30" rows="1" class="message" placeholder="Comment..."></textarea>
+            <button type="submit" value="Post" class="btn" name="submit_comment">Submit Comment</button>
+        </form>
+    </div>
     <?php
             $comments = "SELECT * FROM Comments WHERE postid = $id";
             $results = $connection->query($comments);
