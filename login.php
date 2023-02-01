@@ -25,6 +25,7 @@
       }
    }
 ?>
+
 <!doctype html>
 <html lang="eng">
 
@@ -39,7 +40,7 @@
 <body>
     <form action="login.php" method="post">
 
-        <div class="huh">
+        <div>
             <div class="container">
                 <div style="position: relative;">
                     <span class="close"><a href="index.php" class="closebtn">&times;</a></span>

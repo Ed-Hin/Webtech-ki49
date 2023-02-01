@@ -1,22 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap");
 
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
     font-family: "Poppins";
 }
 
 body {
-    background-color: #44859b;
-    border-radius: 1.5rem;
     display: flex;
-    margin: 0;
     height: 100vh;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
     background-image: url(background.jpg)
+}
+
+.container {
+    padding: 2rem;
+    border-radius: 10px;
+    background: white;
 }
 
 h1 {
@@ -29,53 +31,41 @@ a {
 
 input[type=text], input[type=password], input[type=email] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 0.75rem 1.25rem;
+    margin: 0.5rem 0;
     border: 1px solid #44859b;
-    box-sizing: border-box;
-    text-align: auto;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 button {
     background-color: #44859b;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 0.875rem 1.25rem;
+    margin: 0.5rem 0;
     border: none;
     cursor: pointer;
     width: 100%;
     transition: all 0.3s ease-out;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 button:hover {
     opacity: 70%;
 }
 
-.container {
-    width: 100%;
-    max-width: 100%;
-    margin: 1rem;
-    padding: 2rem;
-    border-radius: 10px;
-    background: white;
-    margin: auto;
-}
-
 .close {
     position: absolute;
     right: 0;
     color: #44859b;
-    font-size: 35px;
+    font-size: 2.5rem;
     font-weight: bold;
     transition: all 0.3s ease-out;
 }
 
-.close:hover {
-    opacity: 70%;
-}
-
 .closebtn {
     color: #44859b;
+}
+
+.close:hover {
+    opacity: 70%;
 }
