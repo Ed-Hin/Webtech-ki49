@@ -141,15 +141,15 @@ div {
 /* De tekst voor likes en datum */
 .extra span {
     position: absolute;
-    font-size: 15px;
+    font-size: 1rem;
     color: black;
     bottom: 0;
     right: 0;
     padding: 10px;
-} 
+}
 
 .button {
-    padding: 0 10px 0 10px;
+    padding: 0 0.6rem 0 0.6rem;
     margin-bottom: 0.3rem;
     border-radius: 5px;
     box-shadow: #17c4be;
@@ -169,7 +169,7 @@ div {
 
 .content {
     width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.2);
     border-radius: 5px;
     background-color: blanchedalmond;
     padding: 2px 16px;
