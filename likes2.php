@@ -78,7 +78,7 @@ if (isset($_POST['liked'])) {
 			    $post = $(this);
 
 			$.ajax({
-				url: 'index.php',
+				url: 'likes2.php',
 				type: 'post',
 				data: {
 					'liked': 1,
@@ -98,7 +98,7 @@ if (isset($_POST['liked'])) {
 		    $post = $(this);
 
 			$.ajax({
-				url: 'index.php',
+				url: 'likes2.php',
 				type: 'post',
 				data: {
 					'unliked': 1,
