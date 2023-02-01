@@ -12,6 +12,42 @@
 body {
     background-color: #44859b;
     text-align: center;
+    position: relative;
+    height: 100vh;
+}
+
+.index_container {
+    min-height: 100%;
+}
+
+.index_main {
+    overflow: auto;
+    padding-bottom: 8%;
+}
+
+.welcome_main {
+    align-items: center;
+    position: absolute;
+    width: 60vw;
+    display: flex;
+    margin: 20vh 35vw;
+    overflow: auto;
+}
+
+.HomeImage {
+    max-width: 100%;
+    margin-top: 50px;
+}
+
+.welcome {
+    text-align: left;
+    font-size: 50px;
+}
+
+.sign {
+    text-align: left;
+    margin-left: 20px;
+    color: white;
 }
 
 /* Geldt voor de hele header van de pagina */
@@ -151,7 +187,7 @@ h1 {
 }
 
 /* Hoeveel ruimte er zit voor de tekst van de post (plek van de tekst)*/
-.container {
+.post_container {
     margin: 10px 10px 50px 10px;
 }
 
@@ -174,35 +210,4 @@ p {
     color: black;
     right: 0;
     padding: 10px;
-}
-
-.mainpage {
-    align-items: center;
-    position: absolute;
-    height: 40vh;
-    width: 60vw;
-    display: flex;
-    margin: 20vh 35vw;
-}
-
-.HomeImage {
-    max-width: 100%;
-    margin-top: 50px;
-}
-
-.welcome {
-    text-align: left;
-    font-size: 50px;
-}
-
-.sign {
-    text-align: left;
-    margin-left: 20px;
-    color: white;
-}
-
-/* commentsection */
-
-.Input {
-    text-align: left;
 }

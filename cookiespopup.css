@@ -1,19 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap");
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins";
-}
-
 .wrapper {
     position: absolute;
     bottom: 1.875em;
     left: 1.875em;
     max-width: 22.8125em;
     background: white;
-    padding: 1.5625em 1.5625em 1.875px 1.5625px;
+    padding: 1.5625em 1.5625em 1.875em 1.5625em;
     border-radius: 15px;
     box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.15);
     text-align: center;
