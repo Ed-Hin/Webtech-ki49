@@ -21,6 +21,23 @@ body {
     background: white;
 }
 
+.close {
+    position: absolute;
+    right: 0;
+    color: #44859b;
+    font-size: 2.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease-out;
+}
+
+.closebtn {
+    color: #44859b;
+}
+
+.close:hover {
+    opacity: 70%;
+}
+
 h1 {
     text-align: center;
 }
@@ -29,7 +46,7 @@ a {
     text-decoration: none;
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password] {
     width: 100%;
     padding: 0.75rem 1.25rem;
     margin: 0.5rem 0;
@@ -50,22 +67,5 @@ button {
 }
 
 button:hover {
-    opacity: 70%;
-}
-
-.close {
-    position: absolute;
-    right: 0;
-    color: #44859b;
-    font-size: 2.5rem;
-    font-weight: bold;
-    transition: all 0.3s ease-out;
-}
-
-.closebtn {
-    color: #44859b;
-}
-
-.close:hover {
     opacity: 70%;
 }

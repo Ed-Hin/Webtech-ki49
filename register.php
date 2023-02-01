@@ -14,39 +14,30 @@
         <div class="logo">
             <a href="home.html" title="NAME"></a>
         </div>
-
-        <div class="huh">
+        <div>
             <div class="container">
                 <div style="position: relative;">
                 <span class="close"><a href="index.php" class="closebtn">&times;</a></span>
                 <h1>Register</h1>
-
                 <label for="name">
                     <p class="name">Name</p>
                 </label>
                 <input type="text" name="name" required>
-
                 <label for="email">
                     <p class="email">Email</p>
                 </label>
-                <input type="text" name="email" required>
-
+                <input type="email" name="email" required>
                 <label for="username">
                     <p class="user">Username</p>
                 </label>
                 <input type="text" name="username" required>
-
                 <label for="password">
                     <p class="pass">Password</p>
                 </label>
                 <input type="password" name="password" required>
-
                 <button type="submit">Register</button>
             </div>
         </div>
-
-        </div>
     </form>
 </body>
-
 </html>
