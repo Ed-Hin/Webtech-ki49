@@ -33,7 +33,7 @@ if (isset($_POST['disliked'])) {
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Like and unlike system</title>
+	<title>Dislike system</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="dislikes.css">
 </head>
