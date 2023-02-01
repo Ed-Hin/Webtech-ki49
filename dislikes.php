@@ -13,7 +13,7 @@ if (isset($_POST['disliked'])) {
 		echo $n+1;
 		exit();
 	}
-	if (isset($_POST['undisliked'])) {
+	if (isset($_POST['unliked'])) {
 		$postid = $_POST['postid'];
 		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
@@ -33,7 +33,7 @@ if (isset($_POST['disliked'])) {
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Like and undislike system</title>
+	<title>Like and unlike system</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="dislikes.css">
 </head>
@@ -48,17 +48,17 @@ if (isset($_POST['disliked'])) {
 
 				<div style="padding: 2px; margin-top: 5px;">
 				<?php 
-					// determine if user has already dis this post
+					// determine if user has already disliked this post
 					$results = mysqli_query($connection, "SELECT * FROM Dislikes WHERE userid=1 AND postid=".$row['postid']."");
 
 					if (mysqli_num_rows($results) == 1 ): ?>
 						<!-- user already dislikes post -->
-						<span class="undislike fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
-						<span class="unlike hide fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="unlike fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="like hide fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
 					<?php else: ?>
-						<!-- user has not yet dis post -->
-						<span class="unlike fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
-						<span class="undislike hide fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<!-- user has not yet disliked post -->
+						<span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="unlike hide fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
 					<?php endif ?>
 
 					<span class="dislikes_count"><?php echo $row['dislikes']; ?> dislikes</span>
@@ -72,8 +72,8 @@ if (isset($_POST['disliked'])) {
 <script src="jquery-3.6.3.min.js"></script>
 <script>
 	$(document).ready(function(){
-		// when the user clicks on unlike
-		$('.unlike').on('click', function(){
+		// when the user clicks on like
+		$('.like').on('click', function(){
 			var postid = $(this).data('id');
 			    $post = $(this);
 
@@ -81,7 +81,7 @@ if (isset($_POST['disliked'])) {
 				url: 'dislikes.php',
 				type: 'post',
 				data: {
-					'dis': 1,
+					'disliked': 1,
 					'postid': postid
 				},
 				success: function(response){
@@ -92,8 +92,8 @@ if (isset($_POST['disliked'])) {
 			});
 		});
 
-		// when the user clicks on undislike
-		$('.undislike').on('click', function(){
+		// when the user clicks on unlike
+		$('.unlike').on('click', function(){
 			var postid = $(this).data('id');
 		    $post = $(this);
 
@@ -101,7 +101,7 @@ if (isset($_POST['disliked'])) {
 				url: 'dislikes.php',
 				type: 'post',
 				data: {
-					'undisliked': 1,
+					'unliked': 1,	
 					'postid': postid
 				},
 				success: function(response){
