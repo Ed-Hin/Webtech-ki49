@@ -15,7 +15,7 @@ footer {
 
 @media screen and (max-width: 1000px) {
     footer {
-        margin-right: -30px;
+        margin-right: -100px;
     }
 }
 

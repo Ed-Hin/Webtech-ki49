@@ -69,6 +69,11 @@ while ($posts = $result->fetch_assoc()) {
 <?php
 } else {
     ?>
+<head>
+    <link rel="stylesheet" href="topics.css">
+</head>
+
+<body>
 <div class="topics_container">
     <div class="welcome_main">
         <div class="txt">

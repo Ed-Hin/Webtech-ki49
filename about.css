@@ -3,15 +3,16 @@
 body {
     position: relative;
     height: 100vh;
+    width: 100vw;
 }
 
-.cookie_container {
+.about_container {
     min-height: 100%;
 }
 
-.cookie_main {
+.about_main {
     overflow: auto;
-    padding-bottom: 24%;
+    padding-bottom: 8%;
 }
 
 .heading {
