@@ -53,12 +53,12 @@ if (isset($_POST['disliked'])) {
 
 					if (mysqli_num_rows($results) == 1 ): ?>
 						<!-- user already dislikes post -->
-						<span class="unlike fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
-						<span class="like hide fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="unlike fa fa-thumbs-down" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="like hide fa fa-thumbs-o-down" data-id="<?php echo $row['postid']; ?>"></span> 
 					<?php else: ?>
 						<!-- user has not yet disliked post -->
-						<span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
-						<span class="unlike hide fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="like fa fa-thumbs-o-down" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="unlike hide fa fa-thumbs-down" data-id="<?php echo $row['postid']; ?>"></span> 
 					<?php endif ?>
 
 					<span class="dislikes_count"><?php echo $row['dislikes']; ?> dislikes</span>
