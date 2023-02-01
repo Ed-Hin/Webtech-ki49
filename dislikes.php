@@ -1,26 +1,26 @@
 <?php 
 	include '../../connection.php';
 
-if (isset($_POST['liked'])) {
+if (isset($_POST['disliked'])) {
 		$postid = $_POST['postid'];
 		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
-		$n = $row['likes'];
+		$n = $row['dislikes'];
 
-		mysqli_query($connection, "INSERT INTO Likes (userid, postid) VALUES (1, $postid)");
-		mysqli_query($connection, "UPDATE Posts SET likes=$n+1 WHERE postid=$postid");
+		mysqli_query($connection, "INSERT INTO Dislikes (userid, postid) VALUES (1, $postid)");
+		mysqli_query($connection, "UPDATE Posts SET dislikes=$n+1 WHERE postid=$postid");
 
 		echo $n+1;
 		exit();
 	}
-	if (isset($_POST['unliked'])) {
+	if (isset($_POST['undisliked'])) {
 		$postid = $_POST['postid'];
 		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
-		$n = $row['likes'];
+		$n = $row['dislikes'];
 
-		mysqli_query($connection, "DELETE FROM Likes WHERE postid=$postid AND userid=1");
-		mysqli_query($connection, "UPDATE Posts SET likes=$n-1 WHERE postid=$postid");
+		mysqli_query($connection, "DELETE FROM Dislikes WHERE postid=$postid AND userid=1");
+		mysqli_query($connection, "UPDATE Posts SET dislikes=$n-1 WHERE postid=$postid");
 		
 		echo $n-1;
 		exit();
@@ -33,9 +33,9 @@ if (isset($_POST['liked'])) {
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Like and unlike system</title>
+	<title>Like and undislike system</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="likes.css">
+	<link rel="stylesheet" href="dislikes.css">
 </head>
 <body>
 	<!-- display posts gotten from the database  -->
@@ -48,20 +48,20 @@ if (isset($_POST['liked'])) {
 
 				<div style="padding: 2px; margin-top: 5px;">
 				<?php 
-					// determine if user has already liked this post
-					$results = mysqli_query($connection, "SELECT * FROM Likes WHERE userid=1 AND postid=".$row['postid']."");
+					// determine if user has already dis this post
+					$results = mysqli_query($connection, "SELECT * FROM Dislikes WHERE userid=1 AND postid=".$row['postid']."");
 
 					if (mysqli_num_rows($results) == 1 ): ?>
-						<!-- user already likes post -->
-						<span class="unlike fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
-						<span class="like hide fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<!-- user already dislikes post -->
+						<span class="undislike fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="unlike hide fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
 					<?php else: ?>
-						<!-- user has not yet liked post -->
-						<span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
-						<span class="unlike hide fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<!-- user has not yet dis post -->
+						<span class="unlike fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="undislike hide fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
 					<?php endif ?>
 
-					<span class="likes_count"><?php echo $row['likes']; ?> likes</span>
+					<span class="dislikes_count"><?php echo $row['dislikes']; ?> dislikes</span>
 				</div>
 			</div>
 
@@ -72,40 +72,40 @@ if (isset($_POST['liked'])) {
 <script src="jquery-3.6.3.min.js"></script>
 <script>
 	$(document).ready(function(){
-		// when the user clicks on like
-		$('.like').on('click', function(){
+		// when the user clicks on unlike
+		$('.unlike').on('click', function(){
 			var postid = $(this).data('id');
 			    $post = $(this);
 
 			$.ajax({
-				url: 'likes2.php',
+				url: 'dislikes.php',
 				type: 'post',
 				data: {
-					'liked': 1,
+					'dis': 1,
 					'postid': postid
 				},
 				success: function(response){
-					$post.parent().find('span.likes_count').text(response + " likes");
+					$post.parent().find('span.dislikes_count').text(response + " dislikes");
 					$post.addClass('hide');
 					$post.siblings().removeClass('hide');
 				}
 			});
 		});
 
-		// when the user clicks on unlike
-		$('.unlike').on('click', function(){
+		// when the user clicks on undislike
+		$('.undislike').on('click', function(){
 			var postid = $(this).data('id');
 		    $post = $(this);
 
 			$.ajax({
-				url: 'likes2.php',
+				url: 'dislikes.php',
 				type: 'post',
 				data: {
-					'unliked': 1,
+					'undisliked': 1,
 					'postid': postid
 				},
 				success: function(response){
-					$post.parent().find('span.likes_count').text(response + " likes");
+					$post.parent().find('span.dislikes_count').text(response + " dislikes");
 					$post.addClass('hide');
 					$post.siblings().removeClass('hide');
 				}

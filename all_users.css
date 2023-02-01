@@ -3,36 +3,20 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
     font-family: "Poppins";
 }
 
 body {
-    border-radius: 1.5rem;
     display: flex;
-    margin: 0;
-    height: 100vh;
     align-items: center;
     justify-content: center;
+    height: 100vh;
     font-size: 1.2rem;
     background-image: url(background.jpg);
-}
-
-h1 {
-    text-align: center;
-    display: block;
-}
-
-h3 {
-    text-align: center;
-}
-
-a {
-    text-decoration: none;
+    background-repeat: round;
 }
 
 .container {
-    padding: 4rem;
     border-radius: 10px;
     background: white;
     height: 100%;
@@ -43,8 +27,24 @@ a {
 .close {
     position: absolute;
     right: 0;
-    display: flex;
-    color: #000;
-    font-size: 35px;
+    color: #44859b;
+    font-size: 2.5rem;
     font-weight: bold;
+    transition: all 0.3s ease-out;
+}
+
+.closebtn {
+    color: #44859b;
+}
+
+.close:hover {
+    opacity: 70%;
+}
+
+h1, p {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
 }

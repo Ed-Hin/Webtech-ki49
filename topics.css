@@ -6,10 +6,6 @@
     margin-left: 15px;
 }
 
-footer {
-    position: sticky !important;
-}
-
 select {
     width: 20%;
     text-align: left;

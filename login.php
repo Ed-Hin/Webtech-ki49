@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span class="close"><a href="index.php" class="closebtn">&times;</a></span>
                 </div>
                 <h1>Log In</h1>
-                <?php
+<?php
 if (isset($error)) {
     echo "<h4> Error: " . $error . "</h4>";
 }

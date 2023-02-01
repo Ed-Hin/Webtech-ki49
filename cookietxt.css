@@ -11,7 +11,7 @@ body {
 
 .cookie_main {
     overflow: auto;
-    padding-bottom: 24%;
+    padding-bottom: 20%;
 }
 
 h1 {
@@ -31,7 +31,7 @@ p {
 }
 
 footer {
-    position: relative !important;
+    position: relative;
     height: 100px;
     margin-top: -100px;
     clear: both;
