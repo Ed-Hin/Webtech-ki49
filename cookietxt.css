@@ -1,16 +1,38 @@
-* {
-    font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap");
+
+body {
+    position: relative;
+    height: 100vh;
 }
 
-h {
+.cookie_container {
+    min-height: 100%;
+}
+
+.cookie_main {
+    overflow: auto;
+    padding-bottom: 24%;
+}
+
+h1 {
     color: white;
-    font-size: 30px;
+    font-size: 2rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20%;
 }
 
 p {
-    float: center;
     color: white;
     text-align: center;
     margin-left: 15%;
     margin-right: 15%;
+    font-size: 1.5rem;
+}
+
+footer {
+    position: relative !important;
+    height: 100px;
+    margin-top: -100px;
+    clear: both;
 }

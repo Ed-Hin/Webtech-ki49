@@ -1,108 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap");
 
 body {
-    background-color: #448a9b;
-    text-align: center;
+    position: relative;
+    height: 100vh;
 }
 
-li, a {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
+.cookie_container {
+    min-height: 100%;
+}
+
+.cookie_main {
+    overflow: auto;
+    padding-bottom: 24%;
+}
+
+.heading {
     color: white;
-    text-decoration: none;
-    text-align: center;
-}
-
-header {
-    position: absolute;
-    z-index: 1000;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #448a9b;
-    padding: 20px 1%;
-}
-
-.logo {
-    color: white;
-    font-size: 2.5rem;
     font-family: "Poppins";
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20%;
 }
-
-.navbar {
-    list-style: none;
-    display: flex;
-}
-
-.navbar li {
-    display: inline-block;
-}
-
-.navbar a {
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 5px 0;
-    margin: 0px 30px;
-    transition: all 0.2s ease-out;
-}
-
-.navbar a:hover {
-    color: #17c4be;
-}
-
-.personal {
-    display: flex;
-    align-items: center;
-}
-
-.personal a {
-    margin-right: 10px;
-    margin-left: 30px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: all 0.2s ease-out;
-}
-
-.personal a:hover {
-    color: #17c4be;
-}
-
 
 .text {
     color: white;
     font-weight: 500;
     font-family: "Poppins";
     font-size: 1.5rem;
-    padding: 3% 15%;
     text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
-h2 {
-    color: white;
-    font-family: "Poppins";
-    font-weight: 1000;
-    font-size: 2rem;
-    text-align: center;
-}
-
-/* MOET OP ELKE PAGINA */
-.navbar > .active > a {
-    color: #17c4be;
-}
-
-.nav-link {
-    color: white;
-}
-
-.footer, footer {
-    position: absolute !important;
-    bottom: 0;
+footer {
+    position: relative !important;
+    height: 100px;
+    margin-top: -100px;
+    clear: both;
 }

@@ -4,6 +4,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
     font-family: "Poppins";
 }
 
@@ -102,6 +103,11 @@ a button:hover {
     box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
 
+/* Zorgt ervoor dat de actieve pagina een andere kleur heeft op de header */
+.navbar > .active > a {
+    color: #17c4be;
+}
+
 /* Alle posts bij elkaar */
 .posts {
     max-width: 100%;
@@ -159,11 +165,6 @@ h2 {
 p {
     text-align: left;
     color: black;
-}
-
-/* Zorgt ervoor dat de actieve pagina een andere kleur heeft op de header */
-.navbar > .active > a {
-    color: #17c4be;
 }
 
 /* De tekst voor likes en datum */

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cookie Constent Box | CodingNepal</title>
     <link rel="stylesheet" href="cookiespopup.css">
 </head>
 <body>
