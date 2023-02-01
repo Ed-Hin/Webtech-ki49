@@ -1,7 +1,9 @@
 <?php
-include "header.php";
-include("../../connection.php");
+    include "header.php";
+    include("../../connection.php");
+?>
 
+<?php
     if (array_key_exists("login_user", $_SESSION)) {
         $userId = $_SESSION['user_id'];
     
@@ -68,8 +70,11 @@ include("../../connection.php");
 
 
 
-    <?php     } ?>
-</body>
 <?php
-include "footer.php";
+    }
+?>
+</body>
+
+<?php
+    include "footer.php";
 ?>

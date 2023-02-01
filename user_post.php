@@ -5,7 +5,7 @@
     // id en username in deze file bereikbaar maken
     $id = $_GET['id'];
     $username = $_GET['username'];
-    // $id = mysqli_real_escape_string
+    $id = mysqli_real_escape_string($connection, $id);
     // real_escape_query ofzo
     // informatie voor de post waarbij de id hetzelfde is, zodat het dezelfde post is.
     $sql = "SELECT * FROM Posts WHERE postid = '$id'";
