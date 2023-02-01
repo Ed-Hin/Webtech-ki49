@@ -25,7 +25,6 @@ try {
             header("location: index.php");
         }
     }
-
 } catch (PDOExeption $e) {
     echo $sql . "<br>" . $e->getMessage();
 }
