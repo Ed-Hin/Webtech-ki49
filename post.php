@@ -60,11 +60,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="post-box">
                     <label for="title">
-                        <p class="title">Title</p>
+                        <h2 class="title">Title</h2>
                     </label>
                     <textarea type="text" id="title" name="title" required></textarea>
                     <label for="content">
-                        <p class="content">Content</p>
+                        <h2 class="content">Content</h2>
                     </label>
                     <textarea type="text" id="content" name="content" required></textarea>
                     <input type="submit" value="Post">

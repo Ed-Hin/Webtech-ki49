@@ -1,9 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap");
 
-.topics {
+.topics_container {
+    min-height: 100%;
+}
+
+.topics_main {
+    overflow: auto;
+    padding-bottom: 8%;
+}
+
+.welcome_main {
+    align-items: center;
+    position: absolute;
+    width: 60vw;
+    display: flex;
+    margin: 20vh 35vw;
+    overflow: auto;
+}
+
+.HomeImage {
+    max-width: 100%;
+    margin-top: 50px;
+}
+
+.welcome {
     text-align: left;
-    font-size: 20px;
-    margin-left: 15px;
+    font-size: 50px;
+}
+
+.sign {
+    text-align: left;
+    margin-left: 20px;
+    color: white;
 }
 
 select {
