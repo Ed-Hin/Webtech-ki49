@@ -81,27 +81,33 @@ div {
 }
 
 .content {
-    width: 60%;
+    width: 55%;
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.2);
     border-radius: 5px;
     background-color: blanchedalmond;
     padding: 2px 16px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 2px;
     word-wrap: break-word;
 }
 
 .message {
-    width: 49%;
+    width: 78%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
     background-color: white;
     padding: 2px 16px;
-    margin: auto;
-    margin-top: 40px;
+    margin-top: 0px;
+    float: left;
     word-wrap: break-word;
 }
+
+.btn {
+    background-color: ;
+}
+
 
 footer {
     position: fixed !important;
 }
+
