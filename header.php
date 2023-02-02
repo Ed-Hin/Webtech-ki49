@@ -29,7 +29,6 @@ if (array_key_exists("login_user", $_SESSION)) {
         <img src="logo_white.png" class="logo" alt="WhoAsked">
         <ul class="navbar">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="popular.php" class="nav-link">Popular</a></li>
             <li class="nav-item"><a href="topics.php" class="nav-link">Topics</a></li>
             <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
         </ul>

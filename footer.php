@@ -12,7 +12,6 @@
             <li>
                 <h2 class="footer-title">Explore</h2>
                 <ul class="explore">
-                    <li><a href="popular.php" class="footer_text">Popular</a></li>
                     <li><a href="topics.php" class="footer_text">Topics</a></li>
                 </ul>
             </li>
