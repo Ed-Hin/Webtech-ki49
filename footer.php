@@ -12,6 +12,7 @@
             <li>
                 <h2 class="footer-title">Explore</h2>
                 <ul class="explore">
+                    <li><a href="index.php" class="footer_text">Latest Posts</a></li>
                     <li><a href="topics.php" class="footer_text">Topics</a></li>
                 </ul>
             </li>
