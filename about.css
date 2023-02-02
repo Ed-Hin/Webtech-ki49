@@ -7,7 +7,7 @@ body {
 }
 
 .about_container {
-    min-height: 100%;
+    min-height: 80%;
 }
 
 .about_main {
@@ -22,7 +22,7 @@ body {
     text-align: center;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 .text {
