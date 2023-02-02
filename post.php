@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "You have forgotten to select a topic";
     }
     elseif ($topics and $title and $content and $userId) {
-        $sql = "INSERT INTO `Posts` (`postid`, `user`, `datetime`, `category`, `title`, `contents`, `likes`) VALUES (NULL, '$userId', CURRENT_TIMESTAMP, '$topics', '$title', '$content', '0')";
+        $sql = "INSERT INTO `Posts` (`postid`, `user`, `datetime`, `category`, `title`, `contents`, `likes`, `dislikes`) VALUES (NULL, '$userId', CURRENT_TIMESTAMP, '$topics', '$title', '$content', '0', '0')";
         $result = mysqli_query($connection,$sql);
         header("location: index.php");
     } 
