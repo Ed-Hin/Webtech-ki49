@@ -1,6 +1,6 @@
 <?php
 include "header.php";
-include "../connection.php";
+include "../../connection.php";
 
 // id en username in deze file bereikbaar maken
 $id = mysqli_real_escape_string($connection, $_GET['id']);
@@ -34,6 +34,12 @@ if (isset($_POST['submitdelete'])) {
     mysqli_query($connection, $delete);
     header("Location:index.php");
 }
+
+if (isset($_POST['submitdelete'])) {
+    $delete = "DELETE FROM Comments WHERE id = '$id'";
+    mysqli_query($connection, $delete);
+    header("Location:index.php");
+}
 ?>
 
 <link rel="stylesheet" href="user_post.css">
@@ -54,6 +60,9 @@ if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) 
             </span>
             <form action="" method="post">
                 <input class="button" type="submit" name="submitdelete" value="delete">
+            </form>
+            <form action="" method="post">
+                <input class="button" type="submit" name="delete" value="delete">
             </form>
         </div>
     </div>
