@@ -1,5 +1,5 @@
 <?php
-include "../../connection.php";
+include "../connection.php";
 session_start();
 
 $name = mysqli_real_escape_string($connection, htmlspecialchars($_POST["name"]));

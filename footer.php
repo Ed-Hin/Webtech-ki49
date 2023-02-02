@@ -23,7 +23,6 @@
                     <li><a href="privacy.php" class="footer_text">Privacy Policy</a></li>
                 </ul>
             </li>
-
             <li>
                 <h2 class="footer-title">Contact</h2>
                 <ul class="about">
@@ -55,7 +54,7 @@
             <li>
                 <h2 class="footer-title">Explore</h2>
                 <ul class="explore">
-                    <li><a href="popular.php" class="footer_text">Popular</a></li>
+                    <li><a href="index.php" class="footer_text">Latest Posts</a></li>
                     <li><a href="topics.php" class="footer_text">Topics</a></li>
                 </ul>
             </li>

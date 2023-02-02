@@ -1,6 +1,6 @@
 <?php
 include "header.php";
-include "../../connection.php";
+include "../connection.php";
 
 // id en username in deze file bereikbaar maken
 $id = mysqli_real_escape_string($connection, $_GET['id']);
