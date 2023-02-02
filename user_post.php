@@ -5,6 +5,8 @@ include "../../connection.php";
 // id en username in deze file bereikbaar maken
 $id = mysqli_real_escape_string($connection, $_GET['id']);
 $username = mysqli_real_escape_string($connection, $_GET['username']);
+$user_id = 
+
 // real_escape_query ofzo
 // informatie voor de post waarbij de id hetzelfde is, zodat het dezelfde post is.
 $sql = "SELECT * FROM Posts WHERE postid = '$id'";
