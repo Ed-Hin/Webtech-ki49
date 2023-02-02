@@ -3,11 +3,11 @@ include "header.php";
 include "../../connection.php";
 
 if (array_key_exists("login_user", $_SESSION)) {
-    $userId = $_SESSION['user_id'];
-
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
     $sql = "SELECT * FROM `Posts` JOIN `Users` u on Posts.user = u.ID";
     $result = mysqli_query($connection, $sql);
-?>
+    ?>
+
 <body>
     <div class="index_container">
         <div class="index_main">
@@ -15,7 +15,8 @@ if (array_key_exists("login_user", $_SESSION)) {
             <h1>Latest posts</h1>
             <div class="posts">
                 <?php
-while ($posts = $result->fetch_assoc()) {?>
+while ($posts = $result->fetch_assoc()) {
+        ?>
                 <div class="post_info">
                     <div class="post_container">
                         <a
@@ -32,15 +33,15 @@ while ($posts = $result->fetch_assoc()) {?>
                     </div>
                 </div>
 </body>
-<?php 
-} 
-?>
+<?php
+}
+    ?>
 </div>
 </div>
 </div>
 <?php
 } else {
-?>
+    ?>
 <div class="index_container">
     <div class="welcome_main">
         <div class="txt">
@@ -52,6 +53,7 @@ while ($posts = $result->fetch_assoc()) {?>
         </div>
     </div>
 </div>
+
 <?php
 }
 include "footer.php";

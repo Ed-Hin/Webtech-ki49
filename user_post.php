@@ -1,46 +1,44 @@
 <?php
-    include "header.php";
-    include("../../connection.php");
+include "header.php";
+include "../../connection.php";
 
-    // id en username in deze file bereikbaar maken
-    $id = $_GET['id'];
-    $username = $_GET['username'];
-    $id = mysqli_real_escape_string($connection, $id);
-    // real_escape_query ofzo
-    // informatie voor de post waarbij de id hetzelfde is, zodat het dezelfde post is.
-    $sql = "SELECT * FROM Posts WHERE postid = '$id'";
-    $result = mysqli_query($connection,$sql);
-    $posts = $result->fetch_assoc();
+// id en username in deze file bereikbaar maken
+$id = mysqli_real_escape_string($connection, $_GET['id']);
+$username = mysqli_real_escape_string($connection, $_GET['username']);
+// real_escape_query ofzo
+// informatie voor de post waarbij de id hetzelfde is, zodat het dezelfde post is.
+$sql = "SELECT * FROM Posts WHERE postid = '$id'";
+$result = mysqli_query($connection, $sql);
+$posts = $result->fetch_assoc();
 
-    // Comments in de database inserten
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-        $message = mysqli_real_escape_string($connection, $_POST['message']);
-        $comment = "INSERT INTO Comments (`id`, `message`, `postid`) VALUES (NULL, '$message', '$id')";
-        $results = mysqli_query($connection, $comment);
-    }
+// Comments in de database inserten
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $message = mysqli_real_escape_string($connection, $_POST['message']);
+    $comment = "INSERT INTO Comments (`id`, `message`, `postid`) VALUES (NULL, '$message', '$id')";
+    $comment_result = mysqli_query($connection, $comment);
+}
 
-    // Kijken wie het is, admin, user of bezoeker
-    if (array_key_exists("login_user", $_SESSION)) {
-        $admin_check = $_SESSION['login_user'];
-        $admin = "SELECT * FROM Users WHERE user = '$admin_check'";
-        // OVERAL VALIDEREN MET ESCAPE STRING
-        $Edmin = mysqli_query($connection,$admin);
-        $user_info = mysqli_fetch_array($Edmin,MYSQLI_ASSOC);
-    }
+// Kijken wie het is, admin, user of bezoeker
+if (array_key_exists("login_user", $_SESSION)) {
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['login_user']);
+    $admin = "SELECT * FROM Users WHERE user = '$user_id'";
+    $admin_result = mysqli_query($connection, $admin);
+    $admin_check = mysqli_fetch_array($admin_result, MYSQLI_ASSOC);
+}
 
-    // if statement voor de admin om posts te verwijderen
-    if(isset($_POST['submitdelete'])) {
-        $delete = "DELETE FROM Posts WHERE postid = '$id'";
-        mysqli_query($connection, $delete);
-        header("Location:index.php");
-    }
+// if statement voor de admin om posts te verwijderen
+if (isset($_POST['submitdelete'])) {
+    $delete = "DELETE FROM Posts WHERE postid = '$id'";
+    mysqli_query($connection, $delete);
+    header("Location:index.php");
+}
 ?>
 
 <link rel="stylesheet" href="user_post.css">
 <div class="posts">
     <?php
-        if (array_key_exists("login_user", $_SESSION) and $user_info['isadmin'] == 1) {
-            ?>
+if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) {
+    ?>
     <div class="post">
         <div class="container">
             <h2><?php echo $posts['title'] ?></h2>
@@ -58,7 +56,9 @@
         </div>
     </div>
 </div>
-<?php } else { ?>
+<?php
+} else {
+    ?>
 
 <div class="post">
     <div class="container">
@@ -75,26 +75,29 @@
     </div>
 </div>
 </div>
-<?php } ?>
+<?php
+}
+?>
 
 <div class="content">
     <div class="wrapper">
         <form action="" method="post" class="form">
-            <textarea name="message" value="message" cols="30" rows="1" class="message" placeholder="Comment..."></textarea>
+            <textarea name="message" value="message" cols="30" rows="1" class="message"
+                placeholder="Comment..."></textarea>
             <button type="submit" value="Post" class="btn" name="submit_comment">Submit Comment</button>
         </form>
     </div>
     <?php
-            $comments = "SELECT * FROM Comments WHERE postid = $id";
-            $results = $connection->query($comments);
-            
-            if ($results->num_rows > 0) {
-              // output data of each row
-                while($row = $results->fetch_assoc()) { ?>
+$comments = "SELECT * FROM Comments WHERE postid = $id";
+$comment_result = $connection->query($comments);
+
+if ($comment_result->num_rows > 0) {
+    // output data of each row
+    while ($row = $comment_result->fetch_assoc()) {?>
     <p><?php echo $row['message']; ?></p>
-    <?php 
-                }
-            }
+    <?php
+}
+}
 ?>
 
-<?php include "footer.php"; ?>
+<?php include "footer.php";?>

@@ -2,7 +2,7 @@
 	include '../../connection.php';
 
 if (isset($_POST['disliked'])) {
-		$postid = $_POST['postid'];
+		$postid = mysqli_real_escape_string($connection, $_POST['postid']);
 		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
 		$n = $row['dislikes'];
@@ -14,7 +14,7 @@ if (isset($_POST['disliked'])) {
 		exit();
 	}
 	if (isset($_POST['unliked'])) {
-		$postid = $_POST['postid'];
+		$postid = mysqli_real_escape_string($connection, $_POST['postid']);
 		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
 		$n = $row['dislikes'];
@@ -53,12 +53,12 @@ if (isset($_POST['disliked'])) {
 
 					if (mysqli_num_rows($results) == 1 ): ?>
 						<!-- user already dislikes post -->
-						<span class="unlike fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
-						<span class="like hide fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="unlike fa fa-thumbs-down" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="like hide fa fa-thumbs-o-down" data-id="<?php echo $row['postid']; ?>"></span> 
 					<?php else: ?>
 						<!-- user has not yet disliked post -->
-						<span class="like fa fa-thumbs-o-up" data-id="<?php echo $row['postid']; ?>"></span> 
-						<span class="unlike hide fa fa-thumbs-up" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="like fa fa-thumbs-o-down" data-id="<?php echo $row['postid']; ?>"></span> 
+						<span class="unlike hide fa fa-thumbs-down" data-id="<?php echo $row['postid']; ?>"></span> 
 					<?php endif ?>
 
 					<span class="dislikes_count"><?php echo $row['dislikes']; ?> dislikes</span>

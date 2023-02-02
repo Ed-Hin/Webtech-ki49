@@ -3,17 +3,18 @@ include("../../connection.php");
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") { 
+    // $userId = $_SESSION['user_id'];
+    $user = $_SESSION['login_user'];
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
     $topics = mysqli_real_escape_string($connection, $_POST['topics']);
     $title = mysqli_real_escape_string($connection, $_POST['title']);
     $content = mysqli_real_escape_string($connection, $_POST['content']);
-    $userId = $_SESSION['user_id'];
-    $user = $_SESSION['login_user'];
 
     if ($topics == "Select topic") {
         $error = "You have forgotten to select a topic";
     }
-    elseif ($topics and $title and $content and $userId) {
-        $sql = "INSERT INTO `Posts` (`postid`, `user`, `datetime`, `category`, `title`, `contents`, `likes`) VALUES (NULL, '$userId', CURRENT_TIMESTAMP, '$topics', '$title', '$content', '0')";
+    elseif ($topics and $title and $content and $user_id) {
+        $sql = "INSERT INTO `Posts` (`postid`, `user`, `datetime`, `category`, `title`, `contents`, `likes`, `dislikes`) VALUES (NULL, '$user_id', CURRENT_TIMESTAMP, '$topics', '$title', '$content', '0', '0')";
         $result = mysqli_query($connection,$sql);
         header("location: index.php");
     } 
@@ -54,17 +55,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         <option value="Memes">Memes</option>
                         <option value="Politics">Politics</option>
                         <option value="Music">Music</option>
-                        <option value="Music">Sports</option>
-                        <option value="Music">Gaming</option>>
+                        <option value="Sports">Sports</option>
+                        <option value="Gaming">Gaming</option>>
                     </select>
                 </div>
                 <div class="post-box">
                     <label for="title">
-                        <p class="title">Title</p>
+                        <h2 class="title">Title</h2>
                     </label>
                     <textarea type="text" id="title" name="title" required></textarea>
                     <label for="content">
-                        <p class="content">Content</p>
+                        <h2 class="content">Content</h2>
                     </label>
                     <textarea type="text" id="content" name="content" required></textarea>
                     <input type="submit" value="Post">

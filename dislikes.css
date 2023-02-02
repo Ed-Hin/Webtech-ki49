@@ -20,7 +20,7 @@ body {
 	display: none;
 }
 
-.fa-thumbs-up, .fa-thumbs-o-up {
+.fa-thumbs-down, .fa-thumbs-o-down {
 	transform: rotateY(-180deg);
 	font-size: 1.3em;
 	cursor: pointer;
