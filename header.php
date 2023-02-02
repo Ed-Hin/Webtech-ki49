@@ -3,7 +3,7 @@ include "../../connection.php";
 session_start();
 
 if (array_key_exists("login_user", $_SESSION)) {
-    $username = $_SESSION['login_user'];
+    $username = mysqli_real_escape_string($connection, $_SESSION['login_user']);
     $sql = "SELECT * FROM Users WHERE user = '$username'";
     $result = mysqli_query($connection, $sql);
     $user_info = mysqli_fetch_array($result, MYSQLI_ASSOC);

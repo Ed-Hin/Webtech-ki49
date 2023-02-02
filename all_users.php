@@ -2,7 +2,7 @@
 include "../../connection.php";
 session_start();
 
-$user_info = $_SESSION['login_user'];
+$user_id = $_SESSION['login_user'];
 
 $sql = "SELECT * FROM Users";
 $result = mysqli_query($connection, $sql);

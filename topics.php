@@ -5,14 +5,14 @@ include "../../connection.php";
 
 <?php
 if (array_key_exists("login_user", $_SESSION)) {
-    $userId = $_SESSION['user_id'];
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
 
     $sql = "SELECT * FROM `Posts` JOIN `Users` u on Posts.user = u.ID";
     $result = mysqli_query($connection, $sql);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['topics']) && $_POST['topics'] !== 'Select') {
-            $category = $_POST['topics'];
+            $category = mysqli_real_escape_string($connection, $_POST['topics']);
             $sql = "SELECT * FROM Posts JOIN `Users`u on Posts.user = u.ID where category = '$category'";
             $result = mysqli_query($connection, $sql);
         }

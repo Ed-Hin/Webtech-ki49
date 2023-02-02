@@ -3,23 +3,24 @@ include "header.php";
 include "../../connection.php";
 
 if (array_key_exists("login_user", $_SESSION)) {
-    $userId = $_SESSION['user_id'];
-
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
     $sql = "SELECT * FROM `Posts` JOIN `Users` u on Posts.user = u.ID";
     $result = mysqli_query($connection, $sql);
     ?>
+
 <body>
     <div class="index_container">
         <div class="index_main">
             <br>
             <h1>Latest posts</h1>
             <div class="posts">
-<?php
+                <?php
 while ($posts = $result->fetch_assoc()) {
         ?>
                 <div class="post_info">
                     <div class="post_container">
-                        <a href="user_post.php?id=<?php echo $posts['postid']; ?>&username=<?php echo $posts['user']; ?>">
+                        <a
+                            href="user_post.php?id=<?php echo $posts['postid']; ?>&username=<?php echo $posts['user']; ?>">
                             <h2><?php echo $posts['title'] ?></h2>
                             <p><?php echo $posts['contents'] ?></p>
                             <p><?php echo $posts['category'] ?></p>

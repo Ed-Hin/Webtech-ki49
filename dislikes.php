@@ -2,7 +2,7 @@
 	include '../../connection.php';
 
 if (isset($_POST['disliked'])) {
-		$postid = $_POST['postid'];
+		$postid = mysqli_real_escape_string($connection, $_POST['postid']);
 		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
 		$n = $row['dislikes'];
@@ -14,7 +14,7 @@ if (isset($_POST['disliked'])) {
 		exit();
 	}
 	if (isset($_POST['unliked'])) {
-		$postid = $_POST['postid'];
+		$postid = mysqli_real_escape_string($connection, $_POST['postid']);
 		$result = mysqli_query($connection, "SELECT * FROM Posts WHERE postid=$postid");
 		$row = mysqli_fetch_array($result);
 		$n = $row['dislikes'];
