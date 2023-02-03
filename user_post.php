@@ -28,12 +28,12 @@
         $user_info = mysqli_fetch_array($Edmin,MYSQLI_ASSOC);
     }
 
-    // if statement voor de admin om posts te verwijderen
-    if(isset($_POST['submitdelete'])) {
-        $delete = "DELETE FROM Posts WHERE postid = '$id'";
-        mysqli_query($connection, $delete);
-        header("Location:index.php");
-    }
+// if statement voor de admin om posts te verwijderen
+if (isset($_POST['submitdelete'])) {
+    $delete = "DELETE FROM Posts WHERE postid = '$id'";
+    mysqli_query($connection, $delete);
+    header("Location:index.php");
+}
 ?>
 
 <link rel="stylesheet" href="user_post.css">
@@ -54,6 +54,9 @@
             </span>
             <form action="" method="post">
                 <input class="button" type="submit" name="submitdelete" value="delete">
+            </form>
+            <form action="" method="post">
+                <input class="button" type="submit" name="delete" value="delete">
             </form>
         </div>
     </div>
