@@ -22,6 +22,7 @@ if (array_key_exists("login_user", $_SESSION)) {
 if (isset($_POST['submit_delete'])) {
     $delete = "DELETE FROM Posts WHERE postid = '$id'";
     mysqli_query($connection, $delete);
+    header("location:index.php");
 }
 
 // Comments in de database inserten
