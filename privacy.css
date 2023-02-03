@@ -1,16 +1,13 @@
-* {
+h1, p {
     text-align: left;
 }
 
-h1 {
-    text-align: left;
+.privacy_container {
+    padding: 4rem;
+    min-height: 100%;
 }
 
-li {
-    text-align: left;
-}
-
-.privacycontainer {
-    padding: 40px;
-    text-align: left;
+.privacy_main {
+    overflow: auto;
+    padding-bottom: 8%;
 }
