@@ -2,6 +2,15 @@
 include "header.php";
 include "../../connection.php";
 
+// id en username in deze file bereikbaar maken
+$id = $_GET['id'];
+$id = mysqli_real_escape_string($connection, $id);
+
+// informatie voor de post waarbij de id hetzelfde is, zodat het dezelfde post is.
+$sql = "SELECT * FROM Posts JOIN `Users` u on Posts.user = u.ID WHERE postid = '$id'";
+$result = mysqli_query($connection, $sql);
+$posts = $result->fetch_assoc();
+
 // Kijken wie het is, admin, user of bezoeker
 if (array_key_exists("login_user", $_SESSION)) {
     $user_id = mysqli_real_escape_string($connection, $_SESSION['login_user']);
@@ -9,29 +18,19 @@ if (array_key_exists("login_user", $_SESSION)) {
     $admin = mysqli_query($connection, $my_user_id);
     $admin_check = mysqli_fetch_array($admin, MYSQLI_ASSOC);
 
-    // id en username in deze file bereikbaar maken
-    $id = $_GET['id'];
-    $id = mysqli_real_escape_string($connection, $id);
-
-    // informatie voor de post waarbij de id hetzelfde is, zodat het dezelfde post is.
-    $sql = "SELECT * FROM Posts JOIN `Users` u on Posts.user = u.ID WHERE postid = '$id'";
-    $result = mysqli_query($connection, $sql);
-    $posts = $result->fetch_assoc();
-}
-
-// if statement voor de admin om posts te verwijderen
-if (isset($_POST['submitdelete'])) {
+    // if statement voor de admin om posts te verwijderen
+if (isset($_POST['submit_delete'])) {
     $delete = "DELETE FROM Posts WHERE postid = '$id'";
     mysqli_query($connection, $delete);
-    header("Location:index.php");
 }
 
 // Comments in de database inserten
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['submit_comment'])) {
     $message = mysqli_real_escape_string($connection, $_POST['message']);
     $comment_user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
     $comment = "INSERT INTO Comments (`id`, `message`, `postid`, `userid`) VALUES (NULL, '$message', '$id', '$comment_user_id')";
     $results = mysqli_query($connection, $comment);
+    }
 }
 ?>
 
@@ -51,8 +50,8 @@ if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) 
                     <span class="extrainfo">
                         <?php echo $posts['likes'] ?> Likes | Published on: <?php echo $posts['datetime'] ?>
                     </span>
-                    <form action="user_post.php" method="post">
-                        <input class="delete_button" type="submit" name="submitdelete" value="delete">
+                    <form action="" method="post">
+                        <input class="delete_button" type="submit" name="submit_delete" value="Delete">
                     </form>
                 </div>
             </div>
@@ -67,7 +66,7 @@ if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) 
             </div>
         </div>
         <?php
-    $comments = "SELECT * FROM Comments c JOIN Users u WHERE postid = $id AND u.ID = c.userid";
+    $comments = "SELECT * FROM `Comments` c JOIN Users u WHERE postid = '$id' AND u.ID = c.userid";
     $results = $connection->query($comments);
 
     if ($results->num_rows > 0) {
@@ -108,8 +107,7 @@ if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) 
 <div class="comment_content">
     <div class="wrapper">
         <form action="" method="post" class="form">
-            <textarea name="message" value="message" cols="30" rows="1" class="comment_message"
-                placeholder="Comment..."></textarea>
+            <textarea name="message" value="message" cols="30" rows="1" class="comment_message" placeholder="Comment..."></textarea>
             <button type="submit" value="Post" class="comment_btn" name="submit_comment">Submit Comment</button>
         </form>
     </div>
