@@ -3,7 +3,7 @@
     session_start();
 
     $user_info = $_SESSION['login_user'];
-
+    $user_info = mysqli_real_escape_string($connection, $user_info);
     $sql = "SELECT * FROM Users where user = '$user_info'";
     $result = mysqli_query($connection,$sql);
     $info = $result->fetch_assoc()

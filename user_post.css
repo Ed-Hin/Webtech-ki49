@@ -81,6 +81,7 @@ div {
 	font-size: 1.3em;
 	cursor: pointer;
     color: blue;
+    right: 100px;
 }
 
 .unlike, .like{
