@@ -10,9 +10,10 @@ body {
     display: flex;
     height: 100vh;
     align-items: center;
-    justify-content: center;
     font-size: 1.2rem;
-    background-image: url(background.jpg)
+    background-image: url(background.jpg);
+    margin: 0 auto;
+    width: 30%;
 }
 
 .container {
@@ -40,6 +41,11 @@ body {
 
 h1 {
     text-align: center;
+}
+
+h4 {
+    text-align: center;
+    color: #44859b;
 }
 
 a {

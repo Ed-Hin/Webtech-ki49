@@ -1,5 +1,5 @@
 <?php
-include("../connection.php");
+include("../../connection.php");
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") { 
@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO `Posts` (`postid`, `user`, `datetime`, `category`, `title`, `contents`, `likes`, `dislikes`) VALUES (NULL, '$user_id', CURRENT_TIMESTAMP, '$topics', '$title', '$content', '0', '0')";
         $result = mysqli_query($connection,$sql);
         header("location: index.php");
-    } 
+    }
 }
 ?>
 
