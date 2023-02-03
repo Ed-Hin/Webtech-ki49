@@ -1,26 +1,27 @@
-//inst classes//
 
-const ft = new Fetch();
-const ui = new UI();
 
-//add event listeners//
+var input = document.querySelector('.input_text');
+var main = document.querySelector('#name');
+var temp = document.querySelector('.temp');
+var desc = document.querySelector('.desc');
+var clouds = document.querySelector('.clouds');
+var button= document.querySelector('.submit');
 
-const search = document.getElementById("searchUser");
-const button = document.getElementById("submit");
-button.addEventListener("click", () => {
-  const currentVal = search.value;
 
-  ft.getCurrent(currentVal).then((data) => {
-    //call a UI method//
-    ui.populateUI(data);
-    //call saveToLS
-    ui.saveToLS(data);
-  });
-});
+button.addEventListener('click', function(name){
+fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=50a7aa80fa492fa92e874d23ad061374')
+.then(response => response.json())
+.then(data => {
+  var tempValue = data['main']['temp'];
+  var nameValue = data['name'];
+  var descValue = data['weather'][0]['description'];
 
-//event listener for local storage
+  main.innerHTML = nameValue;
+  desc.innerHTML = "Desc - "+descValue;
+  temp.innerHTML = "Temp - "+tempValue;
+  input.value ="";
 
-window.addEventListener("DOMContentLoaded", () => {
-  const dataSaved = ui.getFromLS();
-  ui.populateUI(dataSaved);
-});
+})
+
+.catch(err => alert("Wrong city name!"));
+})
