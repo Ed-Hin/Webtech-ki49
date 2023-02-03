@@ -3,8 +3,6 @@
 /* Alle posts bij elkaar */
 
 .posts {
-    max-width: 100%;
-    margin: 0;
     padding-top: 100px;
 }
 
@@ -20,15 +18,13 @@
     word-wrap: break-word;
 }
 
-.container {
-    min-height: 200px;
-    word-wrap: break-word;
+.user_post_container {
+    min-height: 100%;
 }
 
-/* Creeërt een kleine border wanneer een muis erop staat */
-.post:hover {
-    border: 1px solid black;
-    border-radius: 5px;
+.user_post_main {
+    overflow: auto;
+    padding-bottom: 8%;
 }
 
 /* De titel van de post */
@@ -62,7 +58,7 @@ div {
     padding: 10px;
 }
 
-.button {
+.delete_button {
     padding: 0 0.6rem 0 0.6rem;
     margin-bottom: 0.3rem;
     border-radius: 5px;
@@ -75,35 +71,9 @@ div {
     margin-right: 35rem
 }
 
-.button:hover {
+.delete_button:hover {
     color: white;
     box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
-}
-
-.content {
-    width: 55%;
-    box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-    background-color: blanchedalmond;
-    padding: 2px 16px;
-    margin: auto;
-    margin-top: 2px;
-    word-wrap: break-word;
-}
-
-.message {
-    width: 78%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 5px;
-    background-color: white;
-    padding: 2px 16px;
-    margin-top: 0px;
-    float: left;
-    word-wrap: break-word;
-}
-
-.btn {
-    background-color: white;
 }
 
 .extra .fa-thumbs-up {
@@ -113,15 +83,8 @@ div {
     color: blue;
 }
 
-@media screen and (max-width: 1000px) {
-    .HomeImage {
-        opacity: 0%;
-    }
-}
-
 .unlike, .like{
     color: blue;
-
 }
 
 .fa-thumbs-up, .fa-thumbs-o-up {
@@ -129,4 +92,48 @@ div {
 	font-size: 1.3em;
 	cursor: pointer;
     color: blue;
+}
+
+.comment_content {
+    width: 55%;
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color: blanchedalmond;
+    padding: 1rem 2rem;
+    margin: auto;
+    margin-top: 2px;
+    word-wrap: break-word;
+}
+
+.comment_message {
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color: white;
+    padding: 0.3rem;
+    margin-top: 0px;
+    float: left;
+    word-wrap: break-word;
+}
+
+.comment_btn {
+    background-color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease-out;
+}
+
+.comment_btn:hover {
+    color: white;
+    background-color: #44859b;
+}
+
+.comment_container {
+    width: 45%;
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color: blanchedalmond;
+    padding: 2px 16px;
+    margin: auto;
+    margin-top: 2px;
+    word-wrap: break-word;
 }

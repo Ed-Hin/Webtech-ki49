@@ -59,7 +59,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background: #44859b;
-    padding: 20px 1%;
+    padding: 20px 1%; 
 }
 
 /* Geldt voor de logo op de header */
@@ -170,7 +170,7 @@ h1 {
 }
 
 /* Creeërt een kleine border wanneer een muis erop staat */
-.post:hover {
+.post_info:hover {
     border: 1px solid black;
     border-radius: 5px;
 }
