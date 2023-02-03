@@ -50,7 +50,6 @@ div {
 
 /* De tekst voor likes en datum */
 .extra span {
-    position: absolute;
     font-size: 1rem;
     color: black;
     bottom: 0;
@@ -76,7 +75,7 @@ div {
     box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
 
-.unlike, .like{
+.unlike, .like {
     color: blue;
 }
 
@@ -85,6 +84,12 @@ div {
 }
 
 .fa-thumbs-up, .fa-thumbs-o-up {
+	transform: rotateY(-180deg);
+	font-size: 1.3em;
+	cursor: pointer;
+}
+
+.fa-thumbs-down, .fa-thumbs-o-down {
 	transform: rotateY(-180deg);
 	font-size: 1.3em;
 	cursor: pointer;
@@ -132,4 +137,20 @@ div {
     margin: auto;
     margin-top: 2px;
     word-wrap: break-word;
+}
+
+.extra {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.extrainfo {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: 0 auto;
+    align-items: center;
 }

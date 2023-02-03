@@ -1,6 +1,6 @@
 <?php
 include "header.php";
-include "../connection.php";
+include "../../connection.php";
 
 if (array_key_exists("login_user", $_SESSION)) {
     $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
@@ -26,7 +26,7 @@ while ($posts = $result->fetch_assoc()) {
                             <p><?php echo $posts['category'] ?></p>
                             <p>By <?php echo $posts['user'] ?></p>
                             <div class="extra" style="position:relative;">
-                                <span> <?php echo $posts['likes'] ?> Likes | Published on:
+                                <span class="date"> <?php echo $posts['likes'] ?> Likes | Published on:
                                     <?php echo $posts['datetime'] ?></span>
                             </div>
                         </a>

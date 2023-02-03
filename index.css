@@ -193,7 +193,7 @@ p {
 }
 
 /* De tekst voor likes en datum */
-.extra span {
+.extra .date {
     position: absolute;
     font-size: 15px;
     color: black;

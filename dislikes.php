@@ -23,7 +23,7 @@ if (isset($_POST['disliked'])) {
 		mysqli_query($connection, "UPDATE Posts SET dislikes=$n-1 WHERE postid=$postid");
 		
 		echo $n-1;
-		exit();
+		exit();	
 	}
 
 	// Retrieve posts from the database
@@ -101,7 +101,7 @@ if (isset($_POST['disliked'])) {
 				url: 'dislikes.php',
 				type: 'post',
 				data: {
-					'unliked': 1,	
+					'unliked': 1,
 					'postid': postid
 				},
 				success: function(response){
