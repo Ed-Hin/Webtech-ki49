@@ -31,7 +31,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="icon" type="image/x-icon" href="logo_only_symbol.png">
     <title>WhoAsked</title>
 </head>
-
+<?php
+if (array_key_exists("login_user", $_SESSION)) {
+?>
 <body>
     <form action="post.php" method="post">
         <div>
@@ -74,5 +76,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
 </body>
-
+<?php
+} else {
+?>
+    <div class="container">
+    <h1>NO PERMISSION</h1>
+    </div>
+<?php 
+} 
+?>
 </html>

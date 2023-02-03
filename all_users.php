@@ -1,13 +1,18 @@
 <?php
-include "../connection.php";
+include "../../connection.php";
 session_start();
 
-$user_id = $_SESSION['login_user'];
+if (array_key_exists("login_user", $_SESSION)) {
 
-$sql = "SELECT * FROM Users";
-$result = mysqli_query($connection, $sql);
+    $user_id = mysqli_real_escape_string($connection, $_SESSION['login_user']);
+    $my_user_id = "SELECT * FROM Users WHERE user = '$user_id'";
+    $admin = mysqli_query($connection, $my_user_id);
+    $admin_check = mysqli_fetch_array($admin, MYSQLI_ASSOC);
+
+    $sql = "SELECT * FROM Users";
+    $result = mysqli_query($connection, $sql);
+}
 ?>
-
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +21,10 @@ $result = mysqli_query($connection, $sql);
     <title>WhoAsked</title>
 </head>
 <body>
+    <?php
+if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) {
+    ?>
     <form action="login.php" method="post">
-        <div>
             <div class="container">
                 <div style="position: relative;">
                     <span class="close"><a href="index.php" class="closebtn">&times;</a></span>
@@ -27,8 +34,15 @@ $result = mysqli_query($connection, $sql);
                     <p><?php echo $user['name'] ?></p>
                     <?php }?>
             </div>
-        </div>
-        </div>
     </form>
 </body>
+<?php 
+} else {
+?>
+    <div class="container">
+    <h1>NO PERMISSION</h1>
+    </div>
+<?php 
+}
+?>
 </html>
