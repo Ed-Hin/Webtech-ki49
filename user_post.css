@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap');
 
 /* Alle posts bij elkaar */
+
 .posts {
     max-width: 100%;
     margin: 0;
@@ -105,8 +106,27 @@ div {
     background-color: purple;
 }
 
-
-footer {
-    position: fixed !important;
+.extra .fa-thumbs-up {
+    transform: rotateY(-180deg);
+	font-size: 1.3em;
+	cursor: pointer;
+    color: blue;
 }
 
+@media screen and (max-width: 1000px) {
+    .HomeImage {
+        opacity: 0%;
+    }
+}
+
+.unlike, .like{
+    color: blue;
+
+}
+
+.fa-thumbs-up, .fa-thumbs-o-up {
+	transform: rotateY(-180deg);
+	font-size: 1.3em;
+	cursor: pointer;
+    color: blue;
+}
