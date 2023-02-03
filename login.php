@@ -1,5 +1,5 @@
 <?php
-include "../connection.php";
+include "../../connection.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1>Log In</h1>
 <?php
 if (isset($error)) {
-    echo "<h4> Error: " . $error . "</h4>";
+    echo "<h4>" . $error . "</h4>";
 }
 ?>
                 <label for="username">

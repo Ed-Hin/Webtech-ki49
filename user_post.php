@@ -52,7 +52,7 @@ if (isset($_POST['submitdelete'])) {
             <span class="extrainfo">
                 <?php echo $posts['likes'] ?> Likes | Published on: <?php echo $posts['datetime'] ?>
             </span>
-            <form action="" method="post">
+            <form action="user_post.php" method="post">
                 <input class="button" type="submit" name="submitdelete" value="delete">
             </form>
             <form action="" method="post">
