@@ -9,6 +9,33 @@ body {
   background: #44859b;
 }
 
+a {
+  font-weight: 500;
+  font-size: 32px;
+  color: #44859b;
+  text-decoration: none;
+  text-align: center;
+}
+
+button {
+  padding: 0 10px 0 10px;
+  border-radius: 5px;
+  box-shadow: #17c4be;
+  transition: all 0.3s ease-out ;
+  color: black;
+  background-color: blanchedalmond;
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+button:hover {
+  color: #17c4be;
+  box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
 .input {
   text-align: center;
   margin: 100px auto;
@@ -47,7 +74,7 @@ input[type="submit"] {
 .close {
   float: right;
   margin-top: -2px;
-  cursor: pointe#44r;
+  cursor: pointer;
   margin-right: 20px;
 }
 

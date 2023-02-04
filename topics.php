@@ -5,6 +5,9 @@ include "../../connection.php";
 
 <?php
 if (array_key_exists("login_user", $_SESSION)) {
+    // Scherm voor degene die is ingelogd.
+    // Gegevens van topics ophalen, zodat er per topic de posts
+    // met dezelfde topic op het scherm terechtkomt.
     $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
 
     $sql = "SELECT * FROM `Posts` JOIN `Users` u on Posts.user = u.ID";
@@ -71,6 +74,7 @@ while ($posts = $result->fetch_assoc()) {
     </div>
     <?php
 } else {
+    // Scherm voor degene die niet is ingelogd.
     ?>
 
     <head>

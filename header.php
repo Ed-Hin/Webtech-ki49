@@ -2,6 +2,7 @@
 include "../../connection.php";
 session_start();
 
+// Zoekt de username als die ingelogd is.
 if (array_key_exists("login_user", $_SESSION)) {
     $username = mysqli_real_escape_string($connection, $_SESSION['login_user']);
     $sql = "SELECT * FROM Users WHERE user = '$username'";
@@ -27,15 +28,17 @@ if (array_key_exists("login_user", $_SESSION)) {
 <body>
     <header>
         <img src="logo_white.png" class="logo" alt="WhoAsked">
+        <!-- De header dat voor iedereen beschikbaar is -->
         <ul class="navbar">
             <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="topics.php" class="nav-link">Topics</a></li>
-            <li class="nav-item"><a href="weather.html" class="nav-link">Weather</a></li>
+            <li class="nav-item"><a href="weather.php" class="nav-link">Weather</a></li>
             <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
         </ul>
         <div class="personal">
             <?php
 if (array_key_exists("login_user", $_SESSION) and $user_info['isadmin'] == 1) {
+    // De header als degene een admin en ingelogd is.
     ?>
             <a href="all_users.php">All Users</a>
             <a href="user.php"><?php echo $_SESSION["login_user"]; ?></a>
@@ -44,6 +47,7 @@ if (array_key_exists("login_user", $_SESSION) and $user_info['isadmin'] == 1) {
 
             <?php
 } elseif (array_key_exists("login_user", $_SESSION)) {
+    // De header als degene ingelogd is.
     ?>
             <a href="user.php"><?php echo $_SESSION["login_user"]; ?></a>
             <a href="logout.php" class="user">Logout</a>
@@ -51,6 +55,7 @@ if (array_key_exists("login_user", $_SESSION) and $user_info['isadmin'] == 1) {
 
             <?php
 } else {
+    // De header als degene nog niet ingelogd is.
     ?>
             <a href="login.php" class="user">Login</a>
             <a href="register.php">Register</a>
@@ -60,6 +65,7 @@ if (array_key_exists("login_user", $_SESSION) and $user_info['isadmin'] == 1) {
         </div>
     </header>
     <script>
+    // De tekst van de header geeft een ander kleur voor de pagina waar degene aanwezig is.
     $(document).ready(function() {
 
         $('ul.navbar > li').each(function(x) {

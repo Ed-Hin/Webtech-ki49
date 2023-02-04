@@ -2,6 +2,7 @@
     include "../../connection.php";
     session_start();
 
+    // Eigen gegevens die dan bij het profiel wordt laten zien.
     $user_info = $_SESSION['login_user'];
     $user_info = mysqli_real_escape_string($connection, $user_info);
     $sql = "SELECT * FROM Users where user = '$user_info'";

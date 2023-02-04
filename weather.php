@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button><a href="index.php">GO BACK</a></button>
     <div class="input">
       <input type="text" placeholder="Enter the city" class="input_text">
       <input type="submit" value="Submit" class="submit">

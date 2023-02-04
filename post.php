@@ -2,6 +2,10 @@
 include "../../connection.php";
 session_start();
 
+// Als er op de knop post wordt gedrukt, dan
+// worden alle gegevens ingevuld in de database,
+// maar als niet alles is ingevuld, geeft hij
+// errors aan en wordt er gezegd wat misging.
 if($_SERVER["REQUEST_METHOD"] == "POST") { 
     // $userId = $_SESSION['user_id'];
     $user = $_SESSION['login_user'];
@@ -33,6 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <?php
 if (array_key_exists("login_user", $_SESSION)) {
+    // Scherm voor degene die is ingelogd.
 ?>
 
 <body>
@@ -80,6 +85,7 @@ if (array_key_exists("login_user", $_SESSION)) {
 </body>
 <?php
 } else {
+    // Scherm voor degene die nog niet is ingelogd.
 ?>
 <div class="container">
     <h1>NO PERMISSION</h1>

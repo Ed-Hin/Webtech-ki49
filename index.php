@@ -2,6 +2,9 @@
 include "header.php";
 include "../../connection.php";
 
+// Het scherm voor als degene is ingelogd.
+// SQL haalt de tabellen met alle posts gejoined met de tabel met alle users, zodat
+// alle benodigde gegevens voor de posts aanwezig zijn en ingevuld kunnen worden.
 if (array_key_exists("login_user", $_SESSION)) {
     $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
     $sql = "SELECT * FROM `Posts` JOIN `Users` u on Posts.user = u.ID";
@@ -41,6 +44,7 @@ while ($posts = $result->fetch_assoc()) {
 </div>
 <?php
 } else {
+    // Het scherm voor als degene nog niet is ingelogd.
     ?>
 <div class="index_container">
     <div class="welcome_main">

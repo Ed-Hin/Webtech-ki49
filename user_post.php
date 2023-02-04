@@ -2,12 +2,12 @@
 include "header.php";
 include "../../connection.php";
 
-// id en username in deze file bereikbaar maken
+// id en username in deze file bereikbaar maken.
 $id = $_GET['id'];
 $id = mysqli_real_escape_string($connection, $id);
 $like_user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
 
-// Kijken wie het is, admin, user of bezoeker
+// Kijken wie het is, admin, user of bezoeker.
 if (array_key_exists("login_user", $_SESSION)) {
 
     $user_id = mysqli_real_escape_string($connection, $_SESSION['login_user']);
@@ -15,7 +15,7 @@ if (array_key_exists("login_user", $_SESSION)) {
     $admin = mysqli_query($connection, $my_user_id);
     $admin_check = mysqli_fetch_array($admin, MYSQLI_ASSOC);
 
-    // if statement voor de admin om posts te verwijderen
+    // Als er op de delete knop wordt gedrukt, wordt de bijbehorende post verwijderd.
     if (isset($_POST['submit_delete'])) {
         $id = mysqli_real_escape_string($connection, $_GET['id']);
         $delete = "DELETE FROM Posts WHERE postid = '$id'";
@@ -23,7 +23,7 @@ if (array_key_exists("login_user", $_SESSION)) {
         header("location:index.php");
     }
 
-    // Comments in de database inserten
+    // Comments in de database inserten.
     if (isset($_POST['submit_comment'])) {
         $id = mysqli_real_escape_string($connection, $_GET['id']);
         $message = mysqli_real_escape_string($connection, $_POST['message']);
@@ -38,6 +38,7 @@ if (array_key_exists("login_user", $_SESSION)) {
 
 <?php
 if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) {
+    // Scherm voor degene die ingelogd is en een admin is.
     // informatie voor de post waarbij de id hetzelfde is, zodat het dezelfde post is.
     $sql = "SELECT * FROM Posts JOIN `Users` u on Posts.user = u.ID WHERE postid = '$id'";
     $result = mysqli_query($connection, $sql);
@@ -62,16 +63,17 @@ if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) 
                 <br>
                 <?php
 if (isset($_POST['like_button'])) {
+    // Als er op de likes knop wordt gedrukt, kan er geliked worden.
         $check_sql = "SELECT * FROM Likes WHERE userid = '$like_user_id' AND postid=" . $posts['postid'] . "";
         $like_results = mysqli_query($connection, $check_sql);
         if (mysqli_num_rows($like_results) == 1) {
             ?>
-                <!-- user already likes post -->
+                <!-- De user heeft de post al geliked -->
                 <span id="unlike" class="unlike fa fa-thumbs-up" name="like_button"
                     data-id="<?php echo $posts['postid']; ?>"></span>
                 <span id="like" class="like hide fa fa-thumbs-o-up" data-id="<?php echo $posts['postid']; ?>"></span>
                 <?php } else {?>
-                <!-- user has not yet liked post -->
+                <!-- De user heeft de post nog niet geliked -->
                 <span id="like" class="like fa fa-thumbs-o-up" data-id="<?php echo $posts['postid']; ?>"></span>
                 <span id="unlike" class="unlike hide fa fa-thumbs-up" name="like_button"
                     data-id="<?php echo $posts['postid']; ?>"></span>
@@ -79,36 +81,39 @@ if (isset($_POST['like_button'])) {
     }
 
     if (isset($_POST['dislike_button'])) {
+        // Als er op de dislikes knop wordt gedrukt, kan er gedisliked worden.
         $dislike_results = mysqli_query($connection, "SELECT * FROM Dislikes WHERE userid = '$like_user_id' AND postid=" . $posts['postid'] . "");
         if (mysqli_num_rows($dislike_results) == 1) {
             ?>
-                <!-- user has not yet disliked post -->
+                <!-- De user heeft de post al gedisliked -->
                 <span class="undislike fa fa-thumbs-down" data-id="<?php echo $posts['postid']; ?>"></span>
                 <span class="dislike hide fa fa-thumbs-o-down" data-id="<?php echo $posts['postid']; ?>"></span>
                 <?php } else {?>
-                <!-- user already has disliked post -->
+                <!-- De user heeft de post nog niet gedisliked -->
                 <span class="dislike fa fa-thumbs-o-down" data-id="<?php echo $posts['postid']; ?>"></span>
                 <span class="undislike hide fa fa-thumbs-down" data-id="<?php echo $posts['postid']; ?>"></span>
                 <?php }
     }?>
                 <div class="extra" style="position:relative;">
+                <!-- Knop voor de admin om de post te verwijderen -->
                     <form action="" method="post">
                         <input class="delete_button" type="submit" name="submit_delete" value="Delete">
                     </form>
                 </div>
             </div>
+            <!-- De plek voor de comments -->
             <div class="comment_content">
                 <div class="wrapper">
                     <form action="" method="post" class="form">
                         <textarea name="message" value="message" cols="30" rows="1" class="comment_message"
                             placeholder="Comment..."></textarea>
-                        <button type="submit" value="Post" class="comment_btn" name="submit_comment">Submit
-                            Comment</button>
+                        <button type="submit" value="Post" class="comment_btn" name="submit_comment">Submit Comment</button>
                     </form>
                 </div>
             </div>
             <?php
-$comments = "SELECT * FROM `Comments` c JOIN Users u WHERE postid = '$id' AND u.ID = c.userid";
+            // Hier worden de comments gelijk ingevuld als ze zijn gemaakt.
+    $comments = "SELECT * FROM `Comments` c JOIN Users u WHERE postid = '$id' AND u.ID = c.userid";
     $comment_results = $connection->query($comments);
 
     if ($comment_results->num_rows > 0) {
@@ -128,6 +133,7 @@ $comments = "SELECT * FROM `Comments` c JOIN Users u WHERE postid = '$id' AND u.
 
 <?php
 } elseif (array_key_exists("login_user", $_SESSION)) {
+    // Scherm voor degene die zijn ingelogd
     // id en username in deze file bereikbaar maken
     $id = $_GET['id'];
     $id = mysqli_real_escape_string($connection, $id);
@@ -215,6 +221,7 @@ $comments = "SELECT * FROM `Comments` c JOIN Users u WHERE postid = '$id' AND u.
 </div>
 <?php
 } else {
+    // Scherm voor degene die nog niet ingelogd is.
     ?>
 
 <body>

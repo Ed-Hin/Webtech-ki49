@@ -3,7 +3,7 @@ include "../../connection.php";
 session_start();
 
 if (array_key_exists("login_user", $_SESSION)) {
-
+    // Gegevens die worden gepakt voor degene die is ingelogd.
     $user_id = mysqli_real_escape_string($connection, $_SESSION['login_user']);
     $my_user_id = "SELECT * FROM Users WHERE user = '$user_id'";
     $admin = mysqli_query($connection, $my_user_id);
@@ -13,6 +13,7 @@ if (array_key_exists("login_user", $_SESSION)) {
     $result = mysqli_query($connection, $sql);
 }
 ?>
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +24,7 @@ if (array_key_exists("login_user", $_SESSION)) {
 <body>
     <?php
 if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) {
+    // Scherm voor degene die is ingelogd en een admin is.
     ?>
     <form action="login.php" method="post">
             <div class="container">
@@ -38,6 +40,7 @@ if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) 
 </body>
 <?php 
 } else {
+    // Scherm voor degene die iets anders is dan een ingelogde admin.
 ?>
     <div class="container">
     <h1>NO PERMISSION</h1>
