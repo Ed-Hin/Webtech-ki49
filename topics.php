@@ -60,7 +60,7 @@ while ($posts = $result->fetch_assoc()) {
                             <p><?php echo $posts['category'] ?></p>
                             <p>By <?php echo $posts['user'] ?></p>
                             <div class="extra" style="position:relative;">
-                                <span> Likes | Published on: <?php echo $posts['datetime'] ?></span>
+                                <span class="date"> Likes | Published on: <?php echo $posts['datetime'] ?></span>
                             </div>
                         </a>
                     </div>
