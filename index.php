@@ -1,6 +1,6 @@
 <?php
 include "header.php";
-include "../connection.php";
+include "../../connection.php";
 
 if (array_key_exists("login_user", $_SESSION)) {
     $user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);

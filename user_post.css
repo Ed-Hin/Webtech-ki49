@@ -2,8 +2,10 @@
 
 /* Alle posts bij elkaar */
 
-.posts {
+.user_posts {
     padding-top: 100px;
+    max-width: 100%;
+    margin: 0;
 }
 
 /* Is een divisie van de pagina (1 post) */

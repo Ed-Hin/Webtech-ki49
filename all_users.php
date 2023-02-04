@@ -1,5 +1,5 @@
 <?php
-include "../connection.php";
+include "../../connection.php";
 session_start();
 
 if (array_key_exists("login_user", $_SESSION)) {

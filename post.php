@@ -1,5 +1,5 @@
 <?php
-include("../../connection.php");
+include "../../connection.php";
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") { 
@@ -34,6 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 if (array_key_exists("login_user", $_SESSION)) {
 ?>
+
 <body>
     <form action="post.php" method="post">
         <div>
@@ -58,7 +59,8 @@ if (array_key_exists("login_user", $_SESSION)) {
                         <option value="Politics">Politics</option>
                         <option value="Music">Music</option>
                         <option value="Sports">Sports</option>
-                        <option value="Gaming">Gaming</option>>
+                        <option value="Gaming">Gaming</option>
+                        <option value="Topical">Topical</option>
                     </select>
                 </div>
                 <div class="post-box">
@@ -79,10 +81,11 @@ if (array_key_exists("login_user", $_SESSION)) {
 <?php
 } else {
 ?>
-    <div class="container">
+<div class="container">
     <h1>NO PERMISSION</h1>
-    </div>
+</div>
 <?php 
 } 
 ?>
+
 </html>
