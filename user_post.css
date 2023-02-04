@@ -16,6 +16,7 @@
     margin: auto;
     margin-top: 40px;
     word-wrap: break-word;
+    text-align: left;
 }
 
 .user_post_container {
@@ -48,18 +49,14 @@ div {
     color: #17c4be;
 }
 
-/* De tekst voor likes en datum */
-.extra span {
-    font-size: 1rem;
-    color: black;
-    bottom: 0;
-    right: 0;
-    padding: 10px;
+.extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .delete_button {
     padding: 0 0.6rem 0 0.6rem;
-    margin-bottom: 0.3rem;
     border-radius: 5px;
     box-sizing: border-box;
     transition: all 0.3s ease-out ;
@@ -67,7 +64,7 @@ div {
     background-color: #44859b;
     font-size: 1.3rem;
     cursor: pointer;
-    margin-right: 35rem
+    text-align: center;
 }
 
 .delete_button:hover {
@@ -75,7 +72,7 @@ div {
     box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
 }
 
-.unlike, .like {
+.unlike, .like, .undislike, .dislike {
     color: blue;
 }
 
@@ -139,7 +136,7 @@ div {
     word-wrap: break-word;
 }
 
-.extra {
+.extrainfo {
     display: flex;
     justify-content: space-between;
     width: 200px;
@@ -147,10 +144,6 @@ div {
     align-items: center;
 }
 
-.extrainfo {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    margin: 0 auto;
-    align-items: center;
+#likes_count {
+    text-align: left;
 }

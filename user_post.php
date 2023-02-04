@@ -14,6 +14,7 @@ if (array_key_exists("login_user", $_SESSION)) {
 
     // if statement voor de admin om posts te verwijderen
     if (isset($_POST['submit_delete'])) {
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
         $delete = "DELETE FROM Posts WHERE postid = '$id'";
         mysqli_query($connection, $delete);
         header("location:index.php");
@@ -21,7 +22,7 @@ if (array_key_exists("login_user", $_SESSION)) {
 
 // Comments in de database inserten
     if (isset($_POST['submit_comment'])) {
-        $id = $_GET['id'];
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
         $message = mysqli_real_escape_string($connection, $_POST['message']);
         $comment_user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']);
         $comment = "INSERT INTO Comments (`id`, `message`, `postid`, `userid`) VALUES (NULL, '$message', '$id', '$comment_user_id')";
@@ -55,73 +56,84 @@ if (array_key_exists("login_user", $_SESSION) and $admin_check['isadmin'] == 1) 
                 <p><?php echo $posts['category'] ?></p>
                 <p>By <?php echo $posts['user'] ?></p>
                 <p>Published on: <?php echo $posts['datetime'] ?></p>
+                <span id="likescount" class="likes_count"><?php echo $posts['likes']; ?> Likes</span>
+                <span class="dislikes_count"><?php echo $posts['dislikes']; ?> Dislikes</span>
+                <br>
                 <?php
-$check_sql = "SELECT * FROM Likes WHERE userid = '$like_user_id' AND postid=" . $posts['postid'] . "";
+    $check_sql = "SELECT * FROM Likes WHERE userid = '$like_user_id' AND postid=" . $posts['postid'] . "";
     $like_results = mysqli_query($connection, $check_sql);
-    if (mysqli_num_rows($like_results) == 1) { 
-        ?>      
+    var_dump(mysqli_num_rows($like_results));
+    if (mysqli_num_rows($like_results) == 1) {
+        ?>
                 <!-- user already likes post -->
-                <span id="decrement-like" class="unlike fa fa-thumbs-up"
-                    data-id="<?php echo $posts['postid']; ?>"></span>
-                <span id="increment-like" class="like hide fa fa-thumbs-o-up"
-                    data-id="<?php echo $posts['postid']; ?>"></span>
+                <span id="unlike" class="unlike fa fa-thumbs-up" name="like_button" data-id="<?php echo $posts['postid']; ?>"></span>
                 <?php } else { ?>
                 <!-- user has not yet liked post -->
-                <span id="increment-like" class="like fa fa-thumbs-o-up"
-                    data-id="<?php echo $posts['postid']; ?>"></span>
-                <span id="decrement-flike" class="unlike hide fa fa-thumbs-up"
-                    data-id="<?php echo $posts['postid']; ?>"></span>
+                <span id="like" class="like fa fa-thumbs-o-up" data-id="<?php echo $posts['postid']; ?>"></span>
                 <?php }
 
     // determine if user has already disliked this post
     $dislike_results = mysqli_query($connection, "SELECT * FROM Dislikes WHERE userid= '$like_user_id' AND postid=" . $posts['postid'] . "");
-    if (mysqli_num_rows($dislike_results) == 1) { ?>
+    if (mysqli_num_rows($dislike_results) == 1) {
+        ?>
                 <!-- user already dislikes post -->
-                <span class="unlike fa fa-thumbs-down" data-id="<?php echo $posts['postid']; ?>"></span>
-                <span class="like hide fa fa-thumbs-o-down" data-id="<?php echo $posts['postid']; ?>"></span>
-                <?php } else {?>
+                <span class="undislike fa fa-thumbs-down" data-id="
+            <?php echo $posts['postid']; ?>"></span>
+                <span class="dislike hide fa fa-thumbs-o-down" data-id="
+            <?php echo $posts['postid']; ?>"></span>
+                <?php } else { ?>
                 <!-- user has not yet disliked post -->
-                <span class="like fa fa-thumbs-o-down" data-id="<?php echo $posts['postid']; ?>"></span>
-                <span class="unlike hide fa fa-thumbs-down" data-id="<?php echo $posts['postid']; ?>"></span>
+                <span class="dislike fa fa-thumbs-o-down" data-id="
+            <?php echo $posts['postid']; ?>"></span>
+                <span class="undislike hide fa fa-thumbs-down" data-id="
+            <?php echo $posts['postid']; ?>"></span>
                 <div class="extra" style="position:relative;">
-                    <div class="extrainfo">
-                        <span id="likescount" class="likes_count"><?php echo $posts['likes']; ?> Likes</span>
-                        <br>
-                        <span class="dislikes_count"><?php echo $posts['dislikes'];} ?> Dislikes</span>
-                    </div>
                     <form action="" method="post">
                         <input class="delete_button" type="submit" name="submit_delete" value="Delete">
                     </form>
                 </div>
-            </div>
-        </div>
-        <div class="comment_content">
-            <div class="wrapper">
-                <form action="" method="post" class="form">
-                    <textarea name="message" value="message" cols="30" rows="1" class="comment_message"
-                        placeholder="Comment..."></textarea>
-                    <button type="submit" value="Post" class="comment_btn" name="submit_comment">Submit Comment</button>
-                </form>
-            </div>
-        </div>
-        <?php
+                    <?php } ?>
+                    <div class="comment_content">
+                        <div class="wrapper">
+                            <form action="" method="post" class="form">
+                                <textarea name="message" value="message" cols="30" rows="1" class="comment_message"
+                                    placeholder="Comment..."></textarea>
+                                <button type="submit" value="Post" class="comment_btn" name="submit_comment">Submit
+                                    Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                    <?php
 $comments = "SELECT * FROM `Comments` c JOIN Users u WHERE postid = '$id' AND u.ID = c.userid";
     $comment_results = $connection->query($comments);
 
     if ($comment_results->num_rows > 0) {
         // output data of each row
         while ($row = $comment_results->fetch_assoc()) {?>
-        <div class="comment_container">
-            <p><?php echo $row['message']; ?></p>
-            <p>By <?php echo $row['user']; ?></p>
+                    <div class="comment_container">
+                        <p><?php echo $row['message']; ?></p>
+                        <p>By <?php echo $row['user']; ?></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <?php
-}
+    </div>
+    <?php
+        }
     }
     ?>
-    </div>
-</div>
-<?php
+
+
+
+
+
+
+
+
+
+
+
+    <?php
 } elseif (array_key_exists("login_user", $_SESSION)) {
     // id en username in deze file bereikbaar maken
     $id = $_GET['id'];
@@ -132,161 +144,266 @@ $comments = "SELECT * FROM `Comments` c JOIN Users u WHERE postid = '$id' AND u.
     $result = mysqli_query($connection, $sql);
     $posts = mysqli_fetch_array($result);
     ?>
-<div class="user_post_container">
-    <div class="user_post_main">
-        <div class="posts">
-            <div class="post">
-                <h2><?php echo $posts['title'] ?></h2>
-                <p><?php echo $posts['contents'] ?>
-                <p>
-                <p><?php echo $posts['category'] ?></p>
-                <p>By <?php echo $posts['user'] ?></p>
-            </div>
-            <div class="extra" style="position:relative;">
-                <span class="extrainfo">
-                    <?php echo $posts['likes'] ?> Likes | Published on: <?php echo $posts['datetime'] ?>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
+    <div class="user_post_container">
+        <div class="user_post_main">
+            <div class="posts">
+                <div class="post" id="post_container" data-id="<?php echo $posts['postid']; ?>">
 
-<div class="comment_content">
-    <div class="wrapper">
-        <form action="" method="post" class="form">
-            <textarea name="message" value="message" cols="30" rows="1" class="comment_message"
-                placeholder="Comment..."></textarea>
-            <button type="submit" value="Post" class="comment_btn" name="submit_comment">Submit Comment</button>
-        </form>
-    </div>
-</div>
+                    <h2><?php echo $posts['title'] ?></h2>
+                    <p><?php echo $posts['contents'] ?></p>
+                    <p><?php echo $posts['category'] ?></p>
+                    <p>By <?php echo $posts['user'] ?></p>
+                    <p>Published on: <?php echo $posts['datetime'] ?></p>
+                    <?php
+                        $query1=mysqli_query($conn,"SELECT * FROM `Likes` where postid='".$posts['postid']."' and userid='".$_SESSION['userid']."'");
+                        if (mysqli_num_rows($query1)>0){
+                            ?>
+                            <button value="<?php echo $posts['postid']; ?>" class="unlike">Unlike</button>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <button value="<?php echo $posts['postid']; ?>" class="like">Like</button>
+                            <?php
+                        }
+                    ?>
+    <?php 
+    // determine if user has already disliked this post
+    $dislike_results = mysqli_query($connection, "SELECT * FROM Dislikes WHERE userid= '$like_user_id' AND postid = " . $posts['postid'] . "");
+    if (mysqli_num_rows($dislike_results) == 1) { ?>
+                    <!-- user already dislikes post -->
+                    <span class="undislike fa fa-thumbs-down" data-id="<?php echo $posts['postid']; ?>"></span>
+                    <span class="dislike hide fa fa-thumbs-o-down" data-id="<?php echo $posts['postid']; ?>"></span>
+                    <?php } else {?>
+                    <!-- user has not yet disliked post -->
+                    <span class="dislike fa fa-thumbs-o-down" data-id="<?php echo $posts['postid']; ?>"></span>
+                    <span class="undislike hide fa fa-thumbs-down" data-id="<?php echo $posts['postid']; ?>"></span>
+                    <div class="extra" style="position:relative;">
+                        <div class="extrainfo">
+                            <span id="likescount" class="likes_count"><?php echo $posts['likes']; ?> Likes</span>
+                            <br>
+                            <span class="dislikes_count"><?php echo $posts['dislikes'];} ?> Dislikes</span>
+                        </div>
+                        <form action="" method="post">
+                            <input class="delete_button" type="submit" name="submit_delete" value="Delete">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="comment_content">
+                <div class="wrapper">
+                    <form action="" method="post" class="form">
+                        <textarea name="message" value="message" cols="30" rows="1" class="comment_message"
+                            placeholder="Comment..."></textarea>
+                        <button type="submit" value="Post" class="comment_btn" name="submit_comment">Submit
+                            Comment</button>
+                    </form>
+                </div>
+            </div>
+            <div class="comment_content">
+                <div class="wrapper">
+                    <form action="" method="post" class="form">
+                        <textarea name="message" value="message" cols="30" rows="1" class="comment_message"
+                            placeholder="Comment..."></textarea>
+                        <button type="submit" value="Post" class="comment_btn" name="submit_comment">Submit
+                            Comment</button>
+                    </form>
+                </div>
+            </div>
 
-<?php
+            <?php
 $comments = "SELECT * FROM Comments c JOIN Users u WHERE postid = $id AND u.ID = c.userid";
     $comment_results = $connection->query($comments);
 
     if ($comment_results->num_rows > 0) {
         // output data of each row
         while ($row = $comment_results->fetch_assoc()) {?>
-<div class="comment_container">
-    <p><?php echo $row['message']; ?></p>
-    <p>By <?php echo $row['user']; ?></p>
-</div>
-<?php
+            <div class="comment_container">
+                <p><?php echo $row['message']; ?></p>
+                <p>By <?php echo $row['user']; ?></p>
+            </div>
+            <?php
 }
     }
     ?>
-</div>
-</div>
-<?php
+        </div>
+    </div>
+    <?php
 } else {
     ?>
 
-<body>
-    <div class="index_container">
-        <div class="welcome_main">
-            <div class="txt">
-                <h1 class="welcome">Welcome to<br>WhoAsked!</h1>
-                <h2 class="sign">Sign up now!</h2>
-            </div>
-            <div class="HomeImage">
-                <img src="interaction.png" alt="interaction" class="interaction" width="550" height="550">
+    <body>
+        <div class="index_container">
+            <div class="welcome_main">
+                <div class="txt">
+                    <h1 class="welcome">Welcome to<br>WhoAsked!</h1>
+                    <h2 class="sign">Sign up now!</h2>
+                </div>
+                <div class="HomeImage">
+                    <img src="interaction.png" alt="interaction" class="interaction" width="550" height="550">
+                </div>
             </div>
         </div>
-    </div>
-</body>
-<?php
+    </body>
+    <?php
 }
 ?>
 
 
-<script src="jquery-3.6.3.min.js"></script>
-<script>
-$(document).ready(function() {
-    // when the user clicks on like
-    $('.like').on('click', function() {
-        var postid = $(this).data('id');
-        $post = $(this);
+    <script src="jquery-3.6.3.min.js"></script>
+    <script>
+    // $(document).ready(function() {
+    //     // when the user clicks on like
+    //     $('#like').on('click', function() {
+    //         var postid = $(this).data('id');
+    //         $post = $(this);
 
-        $.ajax({
-            url: 'async.php',
-            type: 'post',
-            data: {
-                'liked': 1,
-                'postid': postid
-            },
-            success: function(response) {
-                console.log(response);
-                $post.parent().find('#likescount').text(response + " Likes");
-                $post.addClass('hide');
-                $post.siblings().removeClass('hide');
-            }
-        });
-    });
+    //         $.ajax({
+    //             url: 'async.php',
+    //             type: 'post',
+    //             data: {
+    //                 'liked': 1,
+    //                 'postid': postid
+    //             },
+    //             success: function(response) {
+    //                 console.log("LIKE RESPONSE: ", response);
+    //                 $post.parent().find('#likescount').text(response + " Likes");
+    //                 $post.addClass('hide');
+    //                 $post.siblings().removeClass('hide');
+    //             }
+    //         });
+    //     });
 
-    // when the user clicks on unlike
-    $('.unlike').on('click', function() {
-        var postid = $(this).data('id');
-        $post = $(this);
+    //     // when the user clicks on unlike
+    //     $('#unlike').on('click', function() {
+    //         var postid = $(this).data('id');
+    //         $post = $(this);
+    //         console.log("Postid ", postid);
+    //         $.ajax({
+    //             url: 'async.php',
+    //             type: 'post',
+    //             data: {
+    //                 'unliked': 1,
+    //                 'postid': postid
+    //             },
+    //             success: function(response) {
+    //                 console.log("UNLIKE RESPONSE: ", response);
+    //                 $post.parent().find('#likescount').text(response + " Likes");
+    //                 $post.addClass('hide');
+    //                 $post.siblings().removeClass('hide');
+    //             }
+    //         });
+    //     });
+    // });
 
-        $.ajax({
-            url: 'async.php',
-            type: 'post',
-            data: {
-                'unliked': 1,
-                'postid': postid
-            },
-            success: function(response) {
-                $post.parent().find('#likescount').text(response + " Likes");
-                $post.addClass('hide');
-                $post.siblings().removeClass('hide');
-            }
-        });
-    });
-});
 
+    // $(document).ready(function() {
+    //     // when the user clicks on like
+    //     $('.dislike').on('click', function() {
+    //         var postid = $(this).data('id');
+    //         $post = $(this);
 
-$(document).ready(function() {
-    // when the user clicks on like
-    $('.like').on('click', function() {
-        var postid = $(this).data('id');
-        $post = $(this);
+    //         $.ajax({
+    //             url: 'async.php',
+    //             type: 'post',
+    //             data: {
+    //                 'disliked': 1,
+    //                 'postid': postid
+    //             },
+    //             success: function(response) {
+    //                 $post.parent().find('dislikes_count').text(response + " dislikes");
+    //                 $post.addClass('hide');
+    //                 $post.siblings().removeClass('hide');
+    //             }
+    //         });
+    //     });
 
-        $.ajax({
-            url: 'async.php',
-            type: 'post',
-            data: {
-                'disliked': 1,
-                'postid': postid
-            },
-            success: function(response) {
-                $post.parent().find('dislikes_count').text(response + " dislikes");
-                $post.addClass('hide');
-                $post.siblings().removeClass('hide');
-            }
-        });
-    });
+    //     // when the user clicks on unlike
+    //     $('.undislike').on('click', function() {
+    //         var postid = $(this).data('id');
+    //         $post = $(this);
 
-    // when the user clicks on unlike
-    $('.unlike').on('click', function() {
-        var postid = $(this).data('id');
-        $post = $(this);
+    //         $.ajax({
+    //             url: 'async.php',
+    //             type: 'post',
+    //             data: {
+    //                 'undisliked': 1,
+    //                 'postid': postid
+    //             },
+    //             success: function(response) {
+    //                 $post.parent().find('dislikes_count').text(response + " dislikes");
+    //                 $post.addClass('hide');
+    //                 $post.siblings().removeClass('hide');
+    //             }
+    //         });
+    //     });
+    // });
 
-        $.ajax({
-            url: 'async.php',
-            type: 'post',
-            data: {
-                'undisliked': 1,
-                'postid': postid
-            },
-            success: function(response) {
-                $post.parent().find('dislikes_count').text(response + " dislikes");
-                $post.addClass('hide');
-                $post.siblings().removeClass('hide');
-            }
-        });
-    });
-});
-</script>
+    $(document).ready(function(){
+		$(document).on('click', '.like', function(){
+			var id=$(this).data(id);
+            console.log(id.id);
+			var $this = $(this);
+			$this.toggleClass('like');
+          	if($this.hasClass('like')){
+				$this.text('Like'); 
+			} else {
+				$this.text('Unlike');
+				$this.addClass("unlike"); 
+			}
+				$.ajax({
+					type: "POST",
+					url: "async.php",
+					data: {
+						postid: id.id,
+						liked: 1,
+					},
+					success: function(){
+						showLike(id);
+					}
+				});
+		});
+		
+		$(document).on('click', '.unlike', function(){
+			var id=$(this).val();
+			var $this = $(this);
+            $this.toggleClass('unlike');
+ 			if($this.hasClass('unlike')){
+				$this.text('Unlike');
+			} else {
+				$this.text('Like');
+				$this.addClass("like");
+			}
+				$.ajax({
+					type: "POST",
+					url: "async.php",
+					data: {
+						id: id,
+						unliked: 1,
+					},
+					success: function(){
+						showLike(id);
+					}
+				});
+		});
+		
+	});
+	
+	function showLike(id){
+		$.ajax({
+			url: 'async.php',
+			type: 'POST',
+			async: false,
+			data:{
+				id: id,
+				showlike: 1
+			},
+			success: function(response){
+				$('#show_like'+id).html(response);
+				
+			}
+		});
+	}
+    </script>
 
-<?php include "footer.php";?>
+    <?php include "footer.php";?>
